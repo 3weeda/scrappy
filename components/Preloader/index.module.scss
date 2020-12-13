@@ -1,0 +1,42 @@
+.preloader {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: center no-repeat url('/assets/images/scene-1.png');
+
+  &__img {
+    position: relative;
+    width: 748px;
+    height: 340px;
+    margin-bottom: 80px;
+
+    .logo {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform-origin: bottom;
+
+      img {
+        width: 748px;
+      }
+
+      &:first-of-type {
+        z-index: 1;
+      }
+    }
+  }
+
+  &__text {
+    span {
+      font-family: MarkerFelt;
+      font-size: 34px;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+  }
+}
