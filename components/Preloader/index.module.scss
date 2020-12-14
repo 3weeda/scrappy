@@ -4,7 +4,8 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: center no-repeat url('/assets/images/scene-1.png');
+  background: center no-repeat url('/assets/images/scene-1.png'),
+    linear-gradient(rgba(0, 0, 0, 1.8), rgba(0, 0, 0, 1.8));
 
   &__img {
     position: relative;
@@ -33,7 +34,6 @@
 
   &__text {
     span {
-      font-family: MarkerFelt;
       font-size: 34px;
       color: #ffffff;
       text-transform: uppercase;
