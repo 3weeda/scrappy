@@ -1,9 +1,18 @@
 @import './fonts.scss';
 @import './cssReset.scss';
 @import './variables.scss';
+@import './mixins.scss';
 
 html,
 body {
   font-family: MarkerFelt;
   cursor: url('/assets/images/cursor.svg'), auto;
+}
+
+::selection {
+  background: var(--primary);
+}
+
+::-moz-selection {
+  background: var(--primary);
 }
