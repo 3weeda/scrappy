@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 import cx from 'classnames';
 import styles from './index.module.scss';
 
@@ -9,10 +10,11 @@ const links = [
   { icon: 'discord', url: 'www.discord.com' },
 ];
 
-const index = () => {
+const Header = ({ hideLogo }) => {
   const [soundOn, setSoundOn] = useState(true);
 
   const toggleSound = () => {
+    // TODO: add sound
     setSoundOn(!soundOn);
   };
 
@@ -26,6 +28,11 @@ const index = () => {
             </a>
           ))}
         </div>
+        {!hideLogo ? (
+          <div className={styles.logo}>
+            <img src="/assets/images/logo-red.png" alt="" />
+          </div>
+        ) : null}
         <div className={styles.options}>
           <div className={styles.text}>
             <div className={styles.greet}>
@@ -36,7 +43,7 @@ const index = () => {
           </div>
           <button
             type="button"
-            className={cx(styles.sound, { [styles.turnOff]: soundOn })}
+            className={cx(styles.sound, { [styles.turnOff]: !soundOn })}
             onClick={toggleSound}
           />
         </div>
@@ -45,4 +52,12 @@ const index = () => {
   );
 };
 
-export default index;
+Header.propTypes = {
+  hideLogo: PropTypes.bool,
+};
+
+Header.defaultProps = {
+  hideLogo: false,
+};
+
+export default Header;
