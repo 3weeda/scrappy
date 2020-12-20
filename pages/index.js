@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Layout from 'layout/Layout';
-import Preloader from 'components/Preloader';
+import Scenes from 'components/Scenes';
 
 const index = () => {
   return (
@@ -9,7 +9,7 @@ const index = () => {
         <title>Scrappy</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Preloader />
+      <Scenes />
     </Layout>
   );
 };
