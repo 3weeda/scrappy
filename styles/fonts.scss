@@ -21,6 +21,17 @@
 }
 
 @font-face {
+  font-family: 'BirdyGame';
+  src: url('/assets/fonts/BirdyGame/BirdyGame.eot');
+  src: url('/assets/fonts/BirdyGame/BirdyGame.eot?#iefix')
+      format('embedded-opentype'),
+    url('/assets/fonts/BirdyGame/BirdyGame.svg#BirdyGame') format('svg'),
+    url('/assets/fonts/BirdyGame/BirdyGame.ttf') format('truetype'),
+    url('/assets/fonts/BirdyGame/BirdyGame.woff') format('woff'),
+    url('/assets/fonts/BirdyGame/BirdyGame.woff2') format('woff2');
+}
+
+@font-face {
   font-family: 'HelveticaNeue-Thin';
   src: url('/assets/fonts/HelveticaNeue/HelveticaNeue-Thin.eot');
   src: url('/assets/fonts/HelveticaNeue/HelveticaNeue-Thin.eot?#iefix')
