@@ -16,6 +16,7 @@
     height: 100vh;
     overflow: hidden;
     transition: 0.5s;
+    z-index: 2;
   }
   .backdrop1 {
     background-image: url('/assets/images/scene3/1.png');
@@ -31,7 +32,7 @@
   }
   .backdrop3 {
     background-image: url('/assets/images/scene3/3.png');
-    background-size: 103%;
+    z-index: 1;
 
     .glare {
       position: absolute;
@@ -45,7 +46,7 @@
     }
 
     &:hover {
-      background-size: 110%;
+      transform: scale(1.15);
 
       .glare {
         bottom: 2%;
