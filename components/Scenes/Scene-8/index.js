@@ -14,21 +14,15 @@ const Scene8 = () => {
   };
 
   return (
-    <div
-      className={cx(styles.section, {
-        [styles.sectionStepTwo]: step === 2,
-        [styles.sectionStepThree]: step === 3,
-        [styles.sectionStepFour]: step === 3,
-      })}
-      onClick={toggle}
-    >
-      <div className={styles.backdrop1} />
-      <div className={styles.people}>
-        <img src="/assets/images/scene8/2.png" />
-      </div>
-      <div className={styles.character}>
-        <img src="/assets/images/scene8/3.png" />
-      </div>
+    <div className={styles.section} onClick={toggle}>
+      <div className={styles.text}></div>
+      <div
+        className={cx(styles.backdrop1, {
+          [styles.backdrop2]: step === 2,
+          [styles.backdrop3]: step === 3,
+          [styles.backdrop4]: step === 4,
+        })}
+      />
     </div>
   );
 };
