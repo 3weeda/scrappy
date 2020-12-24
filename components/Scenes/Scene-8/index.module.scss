@@ -1,0 +1,94 @@
+@import 'styles/mixins';
+
+.section {
+  position: relative;
+  @include fullSize;
+  overflow: hidden;
+
+  > * {
+    transition: 2s;
+  }
+
+  .text {
+    position: absolute;
+    top: 20%;
+    right: 20%;
+    z-index: 1;
+    max-width: 400px;
+    color: var(--white);
+    font-size: 34px;
+    line-height: 1.62;
+
+    &:last-of-type {
+      max-width: 610px;
+    }
+  }
+  .backdrop1 {
+    position: absolute;
+    @include fullSize;
+    @include bgCover;
+    background-image: url('/assets/images/scene8/1.png');
+    background-position: bottom right;
+  }
+
+  .people,
+  .character {
+    position: absolute;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .people {
+    height: 280px;
+    left: -5%;
+    bottom: 8%;
+  }
+
+  .character {
+    height: 210px;
+    right: 0;
+    bottom: 12%;
+  }
+
+  &.sectionStepTwo {
+    .backdrop1 {
+      transform: scale(1.3);
+      transform-origin: right;
+      background-image: url('/assets/images/scene8/1-2.png');
+    }
+
+    .character {
+      bottom: 2%;
+    }
+
+    .people {
+      bottom: 5%;
+      left: -20%;
+      transform: scale(1.1);
+    }
+  }
+
+  &.sectionStepThree {
+    .backdrop1 {
+      transform: scale(1.3);
+      transform-origin: left;
+      background-position: bottom left;
+      background-image: url('/assets/images/scene8/1-2.png');
+    }
+
+    .character {
+      right: -15%;
+      bottom: 4%;
+    }
+
+    .people {
+      left: 15%;
+    }
+  }
+
+  &.sectionStepFour {
+    background-image: url('/assets/images/scene8/1-2.png');
+  }
+}
