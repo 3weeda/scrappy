@@ -17,23 +17,15 @@
     background-position: right;
   }
 
-  .characterRight,
   .characterLeft {
     position: absolute;
     bottom: 0;
+    left: -22%;
     height: 80%;
 
     img {
       height: 100%;
     }
-  }
-
-  .characterLeft {
-    left: -22%;
-  }
-
-  .characterRight {
-    right: 0;
   }
 
   &.sectionStepTwo {
@@ -43,10 +35,6 @@
 
     .characterLeft {
       left: 0;
-    }
-
-    .characterRight {
-      right: -15%;
     }
   }
 }

@@ -21,9 +21,6 @@ const Scene7 = () => {
       <div className={styles.characterLeft}>
         <img src="/assets/images/scene7/2.png" />
       </div>
-      <div className={styles.characterRight}>
-        <img src="/assets/images/scene7/3.png" />
-      </div>
     </div>
   );
 };
