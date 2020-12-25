@@ -15,7 +15,19 @@ const Scene8 = () => {
 
   return (
     <div className={styles.section} onClick={toggle}>
-      <div className={styles.text}></div>
+      {step === 2 ? (
+        <div className={styles.text}>
+          Around the period when he was stenciling, the city was considering
+          defunding the arts program in schools. Scrappy felt this was an
+          injustice and unfair to the artists in the community.
+        </div>
+      ) : step === 4 ? (
+        <div className={styles.text}>
+          Art was in fact a passion of his and a key distraction from his daily
+          hardships. In order to bring light to the subject, Scrappy spent his
+          nights
+        </div>
+      ) : null}
       <div
         className={cx(styles.backdrop1, {
           [styles.backdrop2]: step === 2,
