@@ -7,48 +7,34 @@
 
   .text {
     position: absolute;
-    top: 20%;
-    right: 20%;
+    bottom: 22%;
+    right: 10%;
     z-index: 1;
-    max-width: 400px;
+    max-width: 550px;
     color: var(--white);
     font-size: 34px;
     line-height: 1.62;
-
-    &:last-of-type {
-      max-width: 610px;
-    }
   }
-  .backdrop1,
-  .backdrop2 {
+
+  .backdrop {
     position: absolute;
     @include fullSize;
     @include bgCover;
+    background-image: url('/assets/images/scene9/1.png');
+    animation-name: toggleBg;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
   }
-  .backdrop1 {
+}
+
+@keyframes toggleBg {
+  0% {
     background-image: url('/assets/images/scene9/1.png');
   }
-
-  .backdrop2 {
-    background-image: url('/assets/images/scene9/over1.png');
+  50% {
+    background-image: url('/assets/images/scene9/2.png');
   }
-
-  .peopleLeft,
-  .peopleRight {
-    position: absolute;
-    bottom: 0;
-    height: 100%;
-
-    img {
-      height: 100%;
-    }
-  }
-
-  .peopleLeft {
-    left: 0;
-  }
-
-  .peopleRight {
-    right: 0;
+  100% {
+    background-image: url('/assets/images/scene9/1.png');
   }
 }
