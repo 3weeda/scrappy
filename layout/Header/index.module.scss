@@ -14,6 +14,7 @@
     .links {
       display: flex;
       align-items: center;
+      margin-right: 100px;
 
       a {
         margin-right: 24px;
@@ -26,6 +27,12 @@
           filter: invert(48%) sepia(95%) saturate(6850%) hue-rotate(344deg)
             brightness(91%) contrast(106%);
         }
+      }
+    }
+
+    .logo {
+      img {
+        width: 190px;
       }
     }
 
@@ -51,6 +58,10 @@
           opacity: 0;
           display: flex;
           align-items: center;
+
+          span {
+            color: var(--grey);
+          }
 
           img {
             width: 87px;

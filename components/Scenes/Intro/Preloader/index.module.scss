@@ -1,0 +1,53 @@
+.preloader {
+  position: relative;
+  width: 748px;
+  height: 340px;
+  margin: 10% 40px 80px;
+  transition: 2s;
+
+  .logo {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &:first-of-type {
+      overflow: hidden;
+    }
+
+    img {
+      width: 748px;
+      transition: 2s;
+    }
+
+    &:first-of-type {
+      z-index: 1;
+    }
+  }
+}
+
+.small {
+  width: 518px;
+  height: 229px;
+  margin: 0 40px 70px;
+
+  .logo {
+    img {
+      width: 518px;
+    }
+  }
+}
+
+.above {
+  width: 191px;
+  transform: translatey(-110px) translateX(10px);
+  transition: 1s;
+
+  .logo {
+    img {
+      width: 191px;
+      transition: 1s;
+    }
+  }
+}

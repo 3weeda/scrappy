@@ -1,0 +1,54 @@
+@import 'styles/mixins';
+
+.section {
+  position: relative;
+  @include fullSize;
+  overflow: hidden;
+
+  .text {
+    position: absolute;
+    top: 20%;
+    right: 20%;
+    z-index: 1;
+    max-width: 400px;
+    color: var(--white);
+    font-size: 34px;
+    line-height: 1.62;
+
+    &:last-of-type {
+      max-width: 610px;
+    }
+  }
+  .backdrop1,
+  .backdrop2 {
+    position: absolute;
+    @include fullSize;
+    @include bgCover;
+  }
+  .backdrop1 {
+    background-image: url('/assets/images/scene2/1.png');
+  }
+
+  .backdrop2 {
+    background-image: url('/assets/images/scene2/over1.png');
+  }
+
+  .peopleLeft,
+  .peopleRight {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .peopleLeft {
+    left: 0;
+  }
+
+  .peopleRight {
+    right: 0;
+  }
+}

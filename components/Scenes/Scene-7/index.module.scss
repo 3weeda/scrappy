@@ -1,0 +1,40 @@
+@import 'styles/mixins';
+
+.section {
+  position: relative;
+  @include fullSize;
+  overflow: hidden;
+
+  > * {
+    transition: 2s;
+  }
+
+  .backdrop1 {
+    position: absolute;
+    @include fullSize;
+    @include bgCover;
+    background-image: url('/assets/images/scene7/1.png');
+    background-position: right;
+  }
+
+  .characterLeft {
+    position: absolute;
+    bottom: 0;
+    left: -22%;
+    height: 80%;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  &.sectionStepTwo {
+    .backdrop1 {
+      background-position: left;
+    }
+
+    .characterLeft {
+      left: 0;
+    }
+  }
+}
