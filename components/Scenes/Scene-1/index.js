@@ -1,10 +1,10 @@
 import MotionDiv from 'components/MotionDiv';
 import styles from './index.module.scss';
 
-const Scene1 = () => {
+const Scene1 = ({ transitionData }) => {
   return (
-    <MotionDiv>
-      <div className={styles.section} id="scene1">
+    <MotionDiv transitionData={transitionData}>
+      <div className={styles.section}>
         <div className={styles.backdrop1} />
         <div className={styles.backdrop2} />
         <div className={styles.character}>

@@ -1,14 +1,17 @@
+import MotionDiv from 'components/MotionDiv';
 import styles from './index.module.scss';
 
-const Scene3 = () => {
+const Scene3 = ({ transitionData }) => {
   return (
-    <div className={styles.section}>
-      <div className={styles.backdrop1} />
-      <div className={styles.backdrop2} />
-      <div className={styles.backdrop3}>
-        <div className={styles.glare} />
+    <MotionDiv transitionData={transitionData}>
+      <div className={styles.section}>
+        <div className={styles.backdrop1} />
+        <div className={styles.backdrop2} />
+        <div className={styles.backdrop3}>
+          <div className={styles.glare} />
+        </div>
       </div>
-    </div>
+    </MotionDiv>
   );
 };
 

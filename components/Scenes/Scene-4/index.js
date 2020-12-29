@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import MotionDiv from 'components/MotionDiv';
 import styles from './index.module.scss';
 
-const Scene4 = () => {
+const Scene4 = ({ transitionData }) => {
   const [step, setStep] = useState(1);
 
   const toggle = () => {
@@ -12,36 +13,38 @@ const Scene4 = () => {
     }
   };
   return (
-    <div className={styles.section} onClick={toggle}>
-      {step === 1 ? (
-        <>
-          <div className={styles.backdrop2} />
-          <div className={styles.backdrop1}>
-            <div className={styles.text}>
-              <p>
-                At the end of each school day, Scrappy would walk home from
-                class.Carrying with him, all that pent up anxiety about being
-                teased.
-              </p>
+    <MotionDiv transitionData={transitionData}>
+      <div className={styles.section} onClick={toggle}>
+        {step === 1 ? (
+          <>
+            <div className={styles.backdrop2} />
+            <div className={styles.backdrop1}>
+              <div className={styles.text}>
+                <p>
+                  At the end of each school day, Scrappy would walk home from
+                  class.Carrying with him, all that pent up anxiety about being
+                  teased.
+                </p>
+              </div>
             </div>
-          </div>
-        </>
-      ) : step === 2 ? (
-        <>
-          <div className={styles.backdrop1} />
-          <div className={styles.backdrop2}>
-            <div className={styles.text}>
-              <p>
-                His walks consisted of crossing train tracks and searching for
-                empty spray cans dropped by the older graffiti writers. Finding
-                cans and un-blasted spots to paint along the barriers next to
-                the train depot, he honed his skills.
-              </p>
+          </>
+        ) : step === 2 ? (
+          <>
+            <div className={styles.backdrop1} />
+            <div className={styles.backdrop2}>
+              <div className={styles.text}>
+                <p>
+                  His walks consisted of crossing train tracks and searching for
+                  empty spray cans dropped by the older graffiti writers.
+                  Finding cans and un-blasted spots to paint along the barriers
+                  next to the train depot, he honed his skills.
+                </p>
+              </div>
             </div>
-          </div>
-        </>
-      ) : null}
-    </div>
+          </>
+        ) : null}
+      </div>
+    </MotionDiv>
   );
 };
 
