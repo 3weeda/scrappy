@@ -6,11 +6,10 @@
   overflow: hidden;
 
   .text {
-    position: absolute;
+    position: relative;
     top: 20%;
     left: 48%;
     transform: translateX(-50%);
-    z-index: 1;
     max-width: 400px;
     color: var(--white);
     font-size: 34px;

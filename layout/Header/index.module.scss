@@ -1,9 +1,10 @@
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   cursor: default;
+  z-index: 100;
 
   .headerCont {
     display: flex;

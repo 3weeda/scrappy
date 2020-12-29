@@ -16,3 +16,7 @@ body {
 ::-moz-selection {
   background: var(--primary);
 }
+
+::-webkit-scrollbar {
+  display: none;
+}

@@ -2,20 +2,20 @@ import PropTypes from 'prop-types';
 import Header from '../Header';
 import styles from './index.module.scss';
 
-const Layout = ({ children, hideHeader }) => (
+const Layout = ({ children, hideLogo }) => (
   <main className={styles.main}>
-    {!hideHeader ? <Header /> : null}
+    <Header hideLogo={hideLogo} />
     {children}
   </main>
 );
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  hideHeader: PropTypes.bool,
+  hideLogo: PropTypes.bool,
 };
 
 Layout.defaultProps = {
-  hideHeader: false,
+  hideLogo: false,
 };
 
 export default Layout;

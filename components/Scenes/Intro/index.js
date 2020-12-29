@@ -1,14 +1,12 @@
 import { useEffect, useState } from 'react';
 import cx from 'classnames';
-import Header from 'layout/Header';
-import Layout from 'layout/Layout';
+import MotionDiv from 'components/MotionDiv';
 import Preloader from './Preloader';
 import styles from './index.module.scss';
 
-const index = () => {
+const Intro = ({ transitionData }) => {
   const [loading, setLoading] = useState(100);
   const [animateOut, setanimateOut] = useState(false);
-
   // TODO: Change to actual loading time for all assets
   useEffect(() => {
     if (!loading) return;
@@ -21,12 +19,13 @@ const index = () => {
   }, [loading]);
 
   return (
-    <Layout hideHeader>
-      <Header hideLogo />
+    <MotionDiv transitionData={transitionData} noEntering>
       <div className={styles.intro}>
         <Preloader loading={loading} animateOut={animateOut} />
         <div
-          className={cx(styles.intro__content, { [styles.above]: animateOut })}
+          className={cx(styles.intro__content, {
+            [styles.above]: animateOut,
+          })}
         >
           {loading > 0 ? (
             <span>{`Loading.. ${100 - loading}%`}</span>
@@ -51,8 +50,8 @@ const index = () => {
           )}
         </div>
       </div>
-    </Layout>
+    </MotionDiv>
   );
 };
 
-export default index;
+export default Intro;

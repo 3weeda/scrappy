@@ -1,0 +1,9 @@
+@import 'styles/mixins';
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  @include fullSize;
+  overflow: hidden;
+}
