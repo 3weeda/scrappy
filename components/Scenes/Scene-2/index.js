@@ -2,7 +2,7 @@ import styles from './index.module.scss';
 
 const Scene2 = () => {
   return (
-    <div className={styles.section}>
+    <div className={styles.section} id="scene2">
       {/* <div className={styles.text}>
         <p>
           Scrappy was poor, and in school his classmates would tease and harass

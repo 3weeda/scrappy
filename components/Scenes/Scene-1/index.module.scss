@@ -1,55 +1,48 @@
 @import 'styles/mixins';
 
-.section {
+.text {
   position: relative;
+  top: 20%;
+  left: 48%;
+  transform: translateX(-50%);
+  max-width: 400px;
+  color: var(--white);
+  font-size: 34px;
+  line-height: 1.62;
+
+  &:last-of-type {
+    max-width: 610px;
+  }
+}
+.backdrop1 {
+  position: absolute;
   @include fullSize;
-  overflow: hidden;
+  @include bgCover;
+  background-image: url('/assets/images/scene1/1.png');
+}
+.backdrop2 {
+  position: absolute;
+  left: 10%;
+  @include fullSize;
+  @include bgCover;
+  background-image: url('/assets/images/scene1/2.png');
+}
+.character {
+  position: absolute;
+  left: 7%;
+  height: 100%;
 
-  .text {
-    position: absolute;
-    top: 20%;
-    left: 48%;
-    transform: translateX(-50%);
-    z-index: 1;
-    max-width: 400px;
-    color: var(--white);
-    font-size: 34px;
-    line-height: 1.62;
-
-    &:last-of-type {
-      max-width: 610px;
-    }
-  }
-  .backdrop1 {
-    position: absolute;
-    @include fullSize;
-    @include bgCover;
-    background-image: url('/assets/images/scene1/1.png');
-  }
-  .backdrop2 {
-    position: absolute;
-    left: 10%;
-    @include fullSize;
-    @include bgCover;
-    background-image: url('/assets/images/scene1/2.png');
-  }
-  .character {
-    position: absolute;
-    left: 7%;
+  img {
     height: 100%;
-
-    img {
-      height: 100%;
-    }
   }
-  .people {
-    position: absolute;
-    right: 0;
-    top: 40px;
-    height: 100%;
+}
+.people {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  height: 100%;
 
-    img {
-      height: 100%;
-    }
+  img {
+    height: 100%;
   }
 }
