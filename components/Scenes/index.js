@@ -1,4 +1,3 @@
-import MotionDiv from 'components/MotionDiv';
 import ScrollTransitions from 'react-scroll-transitions';
 import Layout from 'layout/Layout';
 import Intro from './Intro';
@@ -28,11 +27,10 @@ const Scenes = () => {
 
   return (
     <ScrollTransitions
-      test={false}
-      padStart={true}
-      padEnd={true}
-      transitionOverlap={true}
-      transitionSize={0.2}
+      padStart={false}
+      padEnd={false}
+      transitionOverlap={false}
+      transitionSize={0.05}
       sections={[
         { id: 'intro', height: 1 },
         { id: 'scene1', height: 2 },
