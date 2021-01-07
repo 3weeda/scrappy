@@ -10,6 +10,6 @@ RUN apk add --no-cache --virtual .gyp \
 ARG env
 ENV NEXT_PUBLIC_ENV=$env
 RUN yarn build
-EXPOSE 4000
-ENV PORT 4000
+EXPOSE 3000
+ENV PORT 3000
 CMD ["yarn", "start"]
