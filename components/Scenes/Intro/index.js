@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import cx from 'classnames';
 import MotionDiv from 'components/MotionDiv';
 import Preloader from './Preloader';
@@ -7,28 +8,31 @@ import styles from './index.module.scss';
 const Intro = ({ transitionData }) => {
   const [loading, setLoading] = useState(100);
   const [step, setStep] = useState(1);
-  const percent = Number.parseInt(transitionData.percent * 100);
+  const percent = (transitionData.percent * 10).toFixed();
 
   // TODO: Change to actual loading time for all assets
   useEffect(() => {
-    if (!loading) return;
-
-    const intervalId = setInterval(() => {
-      setLoading(loading - 1);
-    }, 10);
-
-    return () => clearInterval(intervalId);
+    let intervalId;
+    if (loading) {
+      intervalId = setInterval(() => {
+        setLoading(loading - 1);
+      }, 10);
+    }
+    return () => {
+      clearInterval(intervalId);
+    };
   }, [loading]);
 
   useEffect(() => {
     // console.log(percent);
-    if (percent < 50) {
+    if (percent < 5) {
       setStep(1);
-    } else if (percent > 50) {
+    } else if (percent > 5) {
       setStep(2);
     }
   }, [percent]);
 
+  // TODO: consider using this to control scrolling
   // const handleScrolling = () => {
   //   window.scrollBy(0, window.innerHeight + 100);
   // };
@@ -67,7 +71,7 @@ const Intro = ({ transitionData }) => {
                   <p>Scroll</p>
                 </div>
                 <div className={styles.arrow}>
-                  <img src="/assets/images/down-arrow.svg" />
+                  <img src="/assets/images/down-arrow.svg" alt="Scroll" />
                 </div>
               </div>
             </div>
@@ -76,6 +80,10 @@ const Intro = ({ transitionData }) => {
       </div>
     </MotionDiv>
   );
+};
+
+Intro.propTypes = {
+  transitionData: PropTypes.object.isRequired,
 };
 
 export default Intro;
