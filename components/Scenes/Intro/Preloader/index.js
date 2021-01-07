@@ -2,13 +2,13 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import styles from './index.module.scss';
 
-const Preloader = ({ loading, animateOut }) => {
+const Preloader = ({ loading, animateUp }) => {
   return (
     <div
       className={cx(
         styles.preloader,
         { [styles.small]: loading === 0 },
-        { [styles.above]: animateOut }
+        { [styles.above]: animateUp }
       )}
     >
       <div className={styles.logo} style={{ height: `${loading}%` }}>
@@ -23,7 +23,7 @@ const Preloader = ({ loading, animateOut }) => {
 
 Preloader.propTypes = {
   loading: PropTypes.number.isRequired,
-  animateOut: PropTypes.bool.isRequired,
+  animateUp: PropTypes.bool.isRequired,
 };
 
 export default Preloader;
