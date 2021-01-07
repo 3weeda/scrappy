@@ -5,20 +5,31 @@
   @include fullSize;
   overflow: hidden;
 
-  .text {
+  > * {
+    transition: 1s;
+  }
+
+  .text1,
+  .text2 {
     position: relative;
-    top: 20%;
-    left: 48%;
-    transform: translateX(-50%);
-    max-width: 400px;
     color: var(--white);
     font-size: 34px;
     line-height: 1.62;
-
-    &:last-of-type {
-      max-width: 610px;
-    }
+    opacity: 0;
   }
+
+  .text1 {
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 410px;
+  }
+
+  .text2 {
+    left: 45%;
+    max-width: 610px;
+  }
+
   .backdrop1 {
     position: absolute;
     @include fullSize;
@@ -27,14 +38,15 @@
   }
   .backdrop2 {
     position: absolute;
-    left: 10%;
+    left: 20%;
     @include fullSize;
     @include bgCover;
     background-image: url('/assets/images/scene1/2.png');
   }
   .character {
     position: absolute;
-    left: 7%;
+    left: 15%;
+    top: 4%;
     height: 100%;
 
     img {
@@ -43,12 +55,52 @@
   }
   .people {
     position: absolute;
-    right: 0;
+    right: -34%;
     top: 40px;
     height: 100%;
 
     img {
       height: 100%;
     }
+  }
+}
+
+.stepTwo {
+  .text1 {
+    opacity: 1;
+  }
+
+  .backdrop2 {
+    left: 11%;
+  }
+
+  .character {
+    position: absolute;
+    left: 7%;
+    top: 0;
+  }
+
+  .people {
+    right: -5%;
+  }
+}
+
+.stepThree {
+  .text2 {
+    opacity: 1;
+  }
+
+  .backdrop2 {
+    left: 11%;
+  }
+
+  .character {
+    position: absolute;
+    left: 7%;
+    top: 0;
+  }
+
+  .people {
+    right: -36%;
   }
 }
