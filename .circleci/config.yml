@@ -93,5 +93,5 @@ jobs:
           cluster: syft-la
           zone: us-central1-a
           k8s-deploy-name: scrappy
-          k8s-ns: client
+          k8s-ns: scrappy
           env: production
