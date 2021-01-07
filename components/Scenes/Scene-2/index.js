@@ -10,11 +10,11 @@ const Scene2 = ({ transitionData }) => {
 
   useEffect(() => {
     // console.log(percent);
-    if (percent < 3) {
+    if (percent < 5) {
       setStep(1);
-    } else if (percent > 3 && percent < 6) {
+    } else if (percent > 5 && percent < 8) {
       setStep(2);
-    } else if (percent > 6) {
+    } else if (percent > 8) {
       setStep(3);
     }
   }, [percent]);
@@ -27,13 +27,14 @@ const Scene2 = ({ transitionData }) => {
           [styles.stepThree]: step === 3,
         })}
       >
-        {/* <div className={styles.text}>
-        <p>
-          Scrappy was poor, and in school his classmates would tease and harass
-          him about it. He felt bad that his kicks were torn up and generic.
-        </p>
-      </div> */}
-        <div className={styles.text}>
+        <div className={styles.text1}>
+          <p>
+            Scrappy was poor, and in school his classmates would tease and
+            harass him about it. He felt bad that his kicks were torn up and
+            generic.
+          </p>
+        </div>
+        <div className={styles.text2}>
           <p>
             All he wanted to rock were the same shoes as his skateboard heroes,
             and the popular kids in his class.
