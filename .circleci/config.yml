@@ -1,0 +1,97 @@
+version: 2.1
+workflows:
+  test-flow:
+    jobs:
+      - test:
+          context: 'gcp credentials'
+          filters:
+            branches:
+              ignore:
+                - master
+  deploy-flow:
+    jobs:
+      - deploy-production:
+          context: 'gcp credentials'
+          filters:
+            branches:
+              only: master
+commands:
+  cm-cloudbuild:
+    description: 'Submit google cloud build'
+    parameters:
+      project:
+        type: string
+      cluster:
+        type: string
+      zone:
+        type: string
+      version:
+        type: string
+        default: CIRCLE_SHA1
+      k8s-deploy-name:
+        type: string
+      k8s-ns:
+        type: string
+      env:
+        type: string
+        default: staging
+    steps:
+      - checkout
+      - run:
+          name: Authenticate gcloud
+          command: |
+            apt-get install -qq -y gettext
+            echo "${GCP_KEY_FILE}" | base64 --decode >> ../gcp_key.json
+            gcloud auth activate-service-account --key-file ../gcp_key.json
+      - run:
+          name: setup environment
+          command: |
+            echo 'export GCP_PROJECT="<< parameters.project >>"' >> $BASH_ENV
+            echo 'export GCP_CLUSTER="<< parameters.cluster >>"' >> $BASH_ENV
+            echo 'export GCP_ZONE="<< parameters.zone >>"' >> $BASH_ENV
+            echo 'export K8S_DEPLOY_NAME="<< parameters.k8s-deploy-name >>"' >> $BASH_ENV
+            echo 'export K8S_NS="<< parameters.k8s-ns >>"' >> $BASH_ENV
+            echo 'export VERSION=$<< parameters.version >>' >> $BASH_ENV
+            echo 'export _ENV=<< parameters.env >>' >> $BASH_ENV
+      - run:
+          name: Upload archive to google storage
+          command: |
+            git archive --format zip --output ../$CIRCLE_PROJECT_REPONAME-$CIRCLE_SHA1.zip $CIRCLE_SHA1
+            gsutil cp ../$CIRCLE_PROJECT_REPONAME-$CIRCLE_SHA1.zip gs://cricleci-cloudbuilds/
+      - run:
+          name: Submit cloudbuild
+          command: |
+            echo $(envsubst < cloudbuild.json) > cloudbuild.json
+            curl -X POST -T cloudbuild.json -H "Authorization: Bearer $(gcloud config config-helper --format='value(credential.access_token)')" https://cloudbuild.googleapis.com/v1/projects/$GCP_PROJECT/builds
+jobs:
+  test:
+    docker:
+      - image: circleci/node:10.14-browsers
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install dependencies
+          command: |
+            yarn --frozen-lockfile
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+  deploy-production:
+    docker:
+      - image: google/cloud-sdk
+    working_directory: ~/repo
+    steps:
+      - cm-cloudbuild:
+          project: churro-io
+          cluster: syft-la
+          zone: us-central1-a
+          k8s-deploy-name: scrappy
+          k8s-ns: client
+          env: production
