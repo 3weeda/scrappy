@@ -1,0 +1,27 @@
+@mixin flexRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin fullSize {
+  height: 100vh;
+  width: 100%;
+}
+
+@mixin bgCover {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@mixin bgContain {
+  background-size: contain;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,57 @@
+@import 'styles/mixins';
+
+.section {
+  position: relative;
+  @include fullSize;
+  overflow: hidden;
+
+  .text {
+    position: absolute;
+    z-index: 1;
+    color: var(--white);
+    font-size: 40px;
+    line-height: 1.38;
+  }
+
+  .backdrop1,
+  .backdrop2,
+  .backdrop3 {
+    position: absolute;
+    @include fullSize;
+    @include bgCover;
+  }
+  .backdrop1 {
+    background: center no-repeat url('/assets/images/scene4/1.png'),
+      linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+
+    .text {
+      bottom: 15%;
+      right: 10%;
+      max-width: 520px;
+    }
+  }
+  .backdrop2 {
+    background: center no-repeat url('/assets/images/scene4/2.png'),
+      linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    animation-name: toggleBg;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+
+    .text {
+      top: 25%;
+      left: 7%;
+      max-width: 600px;
+    }
+  }
+}
+
+@keyframes toggleBg {
+  0% {
+    background: center no-repeat url('/assets/images/scene4/2.png'),
+      linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+  }
+  100% {
+    background: center no-repeat url('/assets/images/scene4/2-1.png'),
+      linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+  }
+}

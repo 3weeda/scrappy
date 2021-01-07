@@ -1,0 +1,52 @@
+{
+  "source": {
+    "storageSource": {
+      "bucket": "cricleci-cloudbuilds",
+      "object": "$CIRCLE_PROJECT_REPONAME-$CIRCLE_SHA1.zip"
+    }
+  },
+  "timeout": "1200s",
+  "steps": [
+    {
+      "name": "gcr.io/cloud-builders/docker",
+      "args": [
+        "build",
+        "-f",
+        "Dockerfile",
+        "-t",
+        "gcr.io/$GCP_PROJECT/$CIRCLE_PROJECT_REPONAME:$VERSION",
+        ".",
+        "--build-arg",
+        "env=$_ENV"
+      ],
+      "timeout": "1000s"
+    },
+    {
+      "name": "gcr.io/cloud-builders/docker",
+      "args": ["push", "gcr.io/$GCP_PROJECT/$CIRCLE_PROJECT_REPONAME:$VERSION"]
+    },
+    {
+      "name": "gcr.io/cloud-builders/kubectl",
+      "args": [
+        "set",
+        "image",
+        "deployment",
+        "$K8S_DEPLOY_NAME",
+        "web=gcr.io/$GCP_PROJECT/$CIRCLE_PROJECT_REPONAME:$VERSION",
+        "--namespace",
+        "$K8S_NS"
+      ],
+      "env": [
+        "CLOUDSDK_COMPUTE_ZONE=$GCP_ZONE",
+        "CLOUDSDK_CONTAINER_CLUSTER=$GCP_CLUSTER"
+      ]
+    },
+    {
+      "name": "gcr.io/cloud-builders/gsutil",
+      "args": [
+        "rm",
+        "gs://cricleci-cloudbuilds/$CIRCLE_PROJECT_REPONAME-$CIRCLE_SHA1.zip"
+      ]
+    }
+  ]
+}

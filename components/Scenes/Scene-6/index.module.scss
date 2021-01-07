@@ -1,0 +1,54 @@
+@import 'styles/mixins';
+
+.section {
+  position: relative;
+  @include fullSize;
+  overflow: hidden;
+
+  .text,
+  .secondText {
+    position: absolute;
+    z-index: 1;
+    max-width: 700px;
+    color: var(--white);
+    font-size: 34px;
+    line-height: 1.62;
+    transition: 2s;
+  }
+
+  .text {
+    bottom: 15%;
+    left: 10%;
+  }
+
+  .secondText {
+    top: 15%;
+    right: 5%;
+  }
+
+  .backdrop1,
+  .backdrop2 {
+    position: absolute;
+    @include fullSize;
+    @include bgCover;
+  }
+  .backdrop1 {
+    background-image: url('/assets/images/scene6/1.png');
+  }
+
+  .character,
+  .secondCharacter {
+    position: absolute;
+    right: 0;
+    bottom: 10%;
+    transition: 2s;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .secondCharacter {
+    transform: translate(-55%, 18%) scale(0.6);
+  }
+}
