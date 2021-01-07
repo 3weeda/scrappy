@@ -4,6 +4,7 @@
   position: relative;
   @include fullSize;
   overflow: hidden;
+  transition: 1s;
 
   > * {
     transition: 1s;
@@ -69,17 +70,13 @@
   .text1 {
     opacity: 1;
   }
-
   .backdrop2 {
     left: 11%;
   }
-
   .character {
-    position: absolute;
     left: 7%;
     top: 0;
   }
-
   .people {
     right: -5%;
   }
@@ -89,18 +86,29 @@
   .text2 {
     opacity: 1;
   }
+  .backdrop2 {
+    left: 11%;
+  }
+  .character {
+    left: 7%;
+    top: 0;
+  }
+  .people {
+    right: -36%;
+  }
+}
+
+.stepFour {
+  opacity: 0.2;
 
   .backdrop2 {
     left: 11%;
   }
-
   .character {
-    position: absolute;
-    left: 7%;
+    left: -50%;
     top: 0;
   }
-
   .people {
-    right: -36%;
+    right: -70%;
   }
 }
