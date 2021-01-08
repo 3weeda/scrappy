@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import MotionDiv from 'components/MotionDiv';
+import MotionDiv from 'components/shared/MotionDiv';
 import styles from './index.module.scss';
 
 const Scene6 = ({ transitionData }) => {
