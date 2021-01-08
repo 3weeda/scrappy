@@ -37,7 +37,7 @@ const Scenes = () => {
         { id: 'scene2', height: 2 },
         { id: 'scene3', height: 2 },
         { id: 'scene4', height: 2 },
-        { id: 'scene5', height: 2 },
+        { id: 'scene5', height: 3 },
         { id: 'scene6', height: 2 },
         { id: 'scene7', height: 2 },
         { id: 'scene8', height: 2 },
