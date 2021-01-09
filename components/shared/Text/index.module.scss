@@ -1,0 +1,12 @@
+.text {
+  position: absolute;
+  color: var(--white);
+  opacity: 0;
+  z-index: 1;
+  transition: 1s !important;
+}
+
+.withBg {
+  background: RGBA(0, 0, 0, 0.5);
+  padding: 10px 10px 10px 20px;
+}

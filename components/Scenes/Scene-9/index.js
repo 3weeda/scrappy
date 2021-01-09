@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import MotionDiv from 'components/MotionDiv';
+import MotionDiv from 'components/shared/MotionDiv';
 import styles from './index.module.scss';
 
 const Scene9 = ({ transitionData }) => (

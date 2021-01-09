@@ -5,22 +5,13 @@
   @include fullSize;
   overflow: hidden;
 
-  .text {
-    position: absolute;
-    top: 20%;
-    right: 20%;
-    z-index: 1;
-    max-width: 400px;
-    color: var(--white);
-    font-size: 34px;
-    line-height: 1.62;
-
-    &:last-of-type {
-      max-width: 610px;
-    }
+  > * {
+    transition: 2s;
   }
+
   .backdrop1,
-  .backdrop2 {
+  .backdrop2,
+  .backdrop3 {
     position: absolute;
     @include fullSize;
     @include bgCover;
@@ -28,27 +19,52 @@
   .backdrop1 {
     background-image: url('/assets/images/scene2/1.png');
   }
-
   .backdrop2 {
     background-image: url('/assets/images/scene2/over1.png');
   }
-
+  .backdrop3 {
+    opacity: 0;
+    background-image: url('/assets/images/scene2/over2.png');
+  }
   .peopleLeft,
   .peopleRight {
     position: absolute;
-    bottom: 0;
-    height: 100%;
+    bottom: -8%;
+    height: 200%;
+    opacity: 0;
 
     img {
       height: 100%;
     }
   }
-
   .peopleLeft {
-    left: 0;
+    left: -80%;
   }
-
   .peopleRight {
-    right: 0;
+    right: -80%;
+  }
+}
+
+.stepTwo {
+  .backdrop3 {
+    opacity: 1;
+  }
+  .peopleLeft,
+  .peopleRight {
+    height: 100%;
+    opacity: 1;
+  }
+  .peopleLeft {
+    left: -3%;
+  }
+  .peopleRight {
+    right: -3%;
+  }
+}
+
+.stepThree {
+  .backdrop1,
+  .backdrop2 {
+    opacity: 0.2;
   }
 }
