@@ -5,16 +5,10 @@
   @include fullSize;
   overflow: hidden;
 
-  .text {
-    position: absolute;
-    bottom: 20%;
-    right: 10%;
-    z-index: 1;
-    max-width: 650px;
-    color: var(--white);
-    font-size: 34px;
-    line-height: 1.62;
+  > * {
+    transition: 1s;
   }
+
   .backdrop1,
   .backdrop2,
   .backdrop3 {
@@ -22,13 +16,16 @@
     @include fullSize;
     @include bgCover;
   }
+
   .backdrop1 {
     background-image: url('/assets/images/scene5/1.png');
+    background-position: bottom;
   }
 
   .backdrop2 {
     background-image: url('/assets/images/scene5/2-1.png');
     background-position: bottom;
+    opacity: 0;
   }
 
   .backdrop3 {
@@ -37,9 +34,10 @@
 
   .characterRight {
     position: absolute;
-    right: 0;
+    right: 10%;
     bottom: 0;
     height: 100%;
+    opacity: 0;
 
     img {
       height: 100%;
@@ -48,7 +46,7 @@
 
   .characterLeft {
     position: absolute;
-    left: 24%;
+    left: 16%;
     bottom: 10%;
 
     .hand {

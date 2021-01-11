@@ -13,10 +13,12 @@ const Scene5 = ({ transitionData }) => {
     // console.log(percent);
     if (percent < 3) {
       setStep(1);
-    } else if (percent > 3 && percent < 6) {
+    } else if (percent >= 3 && percent < 6) {
       setStep(2);
-    } else if (percent > 6) {
+    } else if (percent >= 6 && percent < 9) {
       setStep(3);
+    } else if (percent >= 9) {
+      setStep(4);
     }
   }, [percent]);
 
@@ -26,16 +28,9 @@ const Scene5 = ({ transitionData }) => {
         className={cx(styles.section, {
           [styles.stepTwo]: step === 2,
           [styles.stepThree]: step === 3,
+          [styles.stepFour]: step === 4,
         })}
       >
-        <div className={styles.text}>
-          <p>
-            After a few years of honing his drawing and writing styles, he would
-            cut stencils and go out and paint them in the streets over the
-            weekend. Posting these stencils up began to give Scrappy a boosted
-            selfconfdence, something teenagers of his age can struggle with.
-          </p>
-        </div>
         <div className={styles.backdrop1} />
         <div className={styles.backdrop2} />
         <div className={styles.characterRight}>
