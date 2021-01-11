@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import MotionDiv from 'components/MotionDiv';
+import MotionDiv from 'components/shared/MotionDiv';
+import Text from 'components/shared/Text';
 import styles from './index.module.scss';
 
 const Scene5 = ({ transitionData }) => {
@@ -42,11 +43,17 @@ const Scene5 = ({ transitionData }) => {
         </div>
         <div className={styles.backdrop3} />
         <div className={styles.characterLeft}>
-          <img src="/assets/images/scene5/3-1.png" alt="" />
+          <img src="/assets/images/scene5/3.png" alt="" />
+          <div className={styles.hand}>
+            <img src="/assets/images/scene5/5.png" alt="" />
+          </div>
         </div>
-        {/* <div className={styles.characterLeft}>
-        <img src="/assets/images/scene5/3-2.png" />
-      </div> */}
+        <Text maxW="650" bottom="20%" right="10%" withBg visible={step === 2}>
+          After a few years of honing his drawing and writing styles, he would
+          cut stencils and go out and paint them in the streets over the
+          weekend. Posting these stencils up began to give Scrappy a boosted
+          selfconfdence, something teenagers of his age can struggle with.
+        </Text>
       </div>
     </MotionDiv>
   );
