@@ -15,10 +15,8 @@ const Scene5 = ({ transitionData }) => {
       setStep(1);
     } else if (percent >= 3 && percent < 6) {
       setStep(2);
-    } else if (percent >= 6 && percent < 9) {
+    } else if (percent >= 6) {
       setStep(3);
-    } else if (percent >= 9) {
-      setStep(4);
     }
   }, [percent]);
 
@@ -28,7 +26,6 @@ const Scene5 = ({ transitionData }) => {
         className={cx(styles.section, {
           [styles.stepTwo]: step === 2,
           [styles.stepThree]: step === 3,
-          [styles.stepFour]: step === 4,
         })}
       >
         <div className={styles.backdrop1} />
