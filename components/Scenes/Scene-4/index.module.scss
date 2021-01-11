@@ -35,7 +35,7 @@
     background: center no-repeat url('/assets/images/scene4/2.png');
     animation-name: toggleBg;
     animation-iteration-count: infinite;
-    animation-duration: 1s;
+    animation-duration: 2s;
   }
 }
 
@@ -57,7 +57,10 @@
   0% {
     background: center no-repeat url('/assets/images/scene4/2.png');
   }
-  100% {
+  50% {
     background: center no-repeat url('/assets/images/scene4/2-1.png');
+  }
+  100% {
+    background: center no-repeat url('/assets/images/scene4/2.png');
   }
 }

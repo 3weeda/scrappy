@@ -57,6 +57,7 @@
       animation-iteration-count: infinite;
       animation-duration: 2s;
       transform-origin: bottom left;
+      animation-play-state: paused;
     }
   }
 }
@@ -66,6 +67,10 @@
 .stepFour {
   .characterLeft {
     left: 24%;
+
+    .hand {
+      animation-play-state: running;
+    }
   }
   .backdrop2 {
     opacity: 1;
