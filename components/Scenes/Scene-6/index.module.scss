@@ -5,8 +5,7 @@
   @include fullSize;
   overflow: hidden;
 
-  .text,
-  .secondText {
+  .text {
     position: absolute;
     z-index: 1;
     max-width: 700px;
@@ -16,39 +15,28 @@
     transition: 2s;
   }
 
-  .text {
-    bottom: 15%;
-    left: 10%;
-  }
-
-  .secondText {
-    top: 15%;
-    right: 5%;
-  }
-
-  .backdrop1,
-  .backdrop2 {
+  .backdrop {
     position: absolute;
     @include fullSize;
     @include bgCover;
-  }
-  .backdrop1 {
     background-image: url('/assets/images/scene6/1.png');
+    background-position: bottom;
   }
 
-  .character,
-  .secondCharacter {
+  .character {
     position: absolute;
-    right: 0;
-    bottom: 10%;
+    right: 3%;
+    bottom: 12%;
     transition: 2s;
 
     img {
       height: 100%;
     }
   }
+}
 
-  .secondCharacter {
-    transform: translate(-55%, 18%) scale(0.6);
+.stepTwo {
+  .character {
+    transform: translate(-70%, 18%) scale(0.55);
   }
 }
