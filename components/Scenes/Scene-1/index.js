@@ -40,8 +40,8 @@ const Scene1 = ({ transitionData }) => {
           <img src="/assets/images/scene1/8.png" alt="" />
         </div>
         <Text size="34" maxW="410" top="20%" left="40%" visible={step === 2}>
-          When a boy is born and becomes adopted he can grow up with a litle bit
-          of distrust for the system and feel neglected and unloved by his
+          When a boy is born and becomes adopted he can grow up with a little
+          bit of distrust for the system and feel neglected and unloved by his
           parents who should have shown him unconditional love.
         </Text>
         <Text size="34" bottom="30%" left="45%" visible={step === 3}>

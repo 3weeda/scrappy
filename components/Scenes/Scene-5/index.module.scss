@@ -63,8 +63,7 @@
 }
 
 .stepTwo,
-.stepThree,
-.stepFour {
+.stepThree {
   .characterLeft {
     left: 24%;
 
@@ -78,16 +77,11 @@
   }
 }
 
-.stepThree,
-.stepFour {
+.stepThree {
   .characterRight {
     opacity: 1;
     right: 14%;
   }
-}
-
-.stepFour {
-  opacity: 0;
 }
 
 @keyframes toggleHand {
