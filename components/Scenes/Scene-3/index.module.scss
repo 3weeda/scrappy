@@ -32,6 +32,7 @@
   }
   .backdrop3 {
     background-image: url('/assets/images/scene3/3.png');
+    background-size: cover;
     z-index: 1;
 
     .glare {
@@ -54,4 +55,8 @@
       }
     }
   }
+}
+
+.stepTwo {
+  opacity: 0.2;
 }

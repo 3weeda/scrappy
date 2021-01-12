@@ -1,51 +1,60 @@
-import { useState } from 'react';
-import MotionDiv from 'components/MotionDiv';
+import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
+import MotionDiv from 'components/shared/MotionDiv';
+import Text from 'components/shared/Text';
 import styles from './index.module.scss';
 
 const Scene4 = ({ transitionData }) => {
   const [step, setStep] = useState(1);
+  const percent = (transitionData.percent * 10).toFixed();
+  const enteringPercent = (transitionData.enteringPercent * 100).toFixed();
 
-  const toggle = () => {
-    if (step === 1) {
-      setStep(2);
-    } else {
+  useEffect(() => {
+    // console.log(percent);
+    if (percent < 5) {
       setStep(1);
+    } else if (percent >= 5) {
+      setStep(2);
     }
-  };
+  }, [percent]);
+
   return (
     <MotionDiv transitionData={transitionData}>
-      <div className={styles.section} onClick={toggle}>
-        {step === 1 ? (
-          <>
-            <div className={styles.backdrop2} />
-            <div className={styles.backdrop1}>
-              <div className={styles.text}>
-                <p>
-                  At the end of each school day, Scrappy would walk home from
-                  class.Carrying with him, all that pent up anxiety about being
-                  teased.
-                </p>
-              </div>
-            </div>
-          </>
-        ) : step === 2 ? (
-          <>
-            <div className={styles.backdrop1} />
-            <div className={styles.backdrop2}>
-              <div className={styles.text}>
-                <p>
-                  His walks consisted of crossing train tracks and searching for
-                  empty spray cans dropped by the older graffiti writers.
-                  Finding cans and un-blasted spots to paint along the barriers
-                  next to the train depot, he honed his skills.
-                </p>
-              </div>
-            </div>
-          </>
-        ) : null}
+      <div
+        className={cx(styles.section, {
+          [styles.stepTwo]: step === 2,
+          [styles.stepThree]: transitionData.isLeaving,
+        })}
+        style={{
+          transform: `translate(${100 - enteringPercent}%, ${
+            enteringPercent - 100
+          }%)`,
+        }}
+      >
+        <div className={styles.backdrop1}>
+          <Text maxW="520" bottom="15%" right="14%" visible={step === 1}>
+            At the end of each school day, Scrappy would walk home from class.
+            Carrying with him, all that pent up anxiety about being teased.
+          </Text>
+        </div>
+        <div className={styles.backdrop2} />
+        <div className={styles.backdrop3}>
+          <Text maxW="600" top="25%" left="7%" visible={step === 2}>
+            His walks consisted of crossing train tracks and searching for empty
+            spray cans dropped by the older graffiti writers. Finding cans and
+            un-blasted spots to paint along the barriers next to the train
+            depot, he honed his skills.
+          </Text>
+        </div>
+        <div className={styles.backdrop4} />
       </div>
     </MotionDiv>
   );
+};
+
+Scene4.propTypes = {
+  transitionData: PropTypes.object.isRequired,
 };
 
 export default Scene4;

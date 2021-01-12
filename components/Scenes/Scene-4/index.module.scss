@@ -4,54 +4,63 @@
   position: relative;
   @include fullSize;
   overflow: hidden;
+  transform: translate(50%, -50%);
 
-  .text {
-    position: absolute;
-    z-index: 1;
-    color: var(--white);
-    font-size: 40px;
-    line-height: 1.38;
+  > * {
+    transition: 1s;
   }
 
   .backdrop1,
   .backdrop2,
-  .backdrop3 {
+  .backdrop3,
+  .backdrop4 {
     position: absolute;
     @include fullSize;
     @include bgCover;
   }
   .backdrop1 {
-    background: center no-repeat url('/assets/images/scene4/1.png'),
-      linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
-
-    .text {
-      bottom: 15%;
-      right: 10%;
-      max-width: 520px;
-    }
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    z-index: 0;
   }
   .backdrop2 {
-    background: center no-repeat url('/assets/images/scene4/2.png'),
-      linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    background: center no-repeat url('/assets/images/scene4/1.png');
+  }
+  .backdrop3 {
+    opacity: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+  }
+  .backdrop4 {
+    opacity: 0;
+    transform: translate(50%, -50%);
+    background: center no-repeat url('/assets/images/scene4/2.png');
     animation-name: toggleBg;
     animation-iteration-count: infinite;
-    animation-duration: 1s;
-
-    .text {
-      top: 25%;
-      left: 7%;
-      max-width: 600px;
-    }
+    animation-duration: 2s;
   }
+}
+
+.stepTwo {
+  .backdrop3 {
+    opacity: 1;
+  }
+  .backdrop4 {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.stepThree {
+  opacity: 0.2;
 }
 
 @keyframes toggleBg {
   0% {
-    background: center no-repeat url('/assets/images/scene4/2.png'),
-      linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    background: center no-repeat url('/assets/images/scene4/2.png');
+  }
+  50% {
+    background: center no-repeat url('/assets/images/scene4/2-1.png');
   }
   100% {
-    background: center no-repeat url('/assets/images/scene4/2-1.png'),
-      linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    background: center no-repeat url('/assets/images/scene4/2.png');
   }
 }

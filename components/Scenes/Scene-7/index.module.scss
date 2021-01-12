@@ -9,7 +9,7 @@
     transition: 2s;
   }
 
-  .backdrop1 {
+  .backdrop {
     position: absolute;
     @include fullSize;
     @include bgCover;
@@ -17,7 +17,7 @@
     background-position: right;
   }
 
-  .characterLeft {
+  .character {
     position: absolute;
     bottom: 0;
     left: -22%;
@@ -27,14 +27,14 @@
       height: 100%;
     }
   }
+}
 
-  &.sectionStepTwo {
-    .backdrop1 {
-      background-position: left;
-    }
+.stepTwo {
+  .backdrop {
+    background-position: left;
+  }
 
-    .characterLeft {
-      left: 0;
-    }
+  .character {
+    left: 0;
   }
 }

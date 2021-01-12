@@ -1,18 +1,26 @@
-import MotionDiv from 'components/MotionDiv';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
+import MotionDiv from 'components/shared/MotionDiv';
 import styles from './index.module.scss';
 
-const Scene3 = ({ transitionData }) => {
-  return (
-    <MotionDiv transitionData={transitionData}>
-      <div className={styles.section}>
-        <div className={styles.backdrop1} />
-        <div className={styles.backdrop2} />
-        <div className={styles.backdrop3}>
-          <div className={styles.glare} />
-        </div>
+const Scene3 = ({ transitionData }) => (
+  <MotionDiv transitionData={transitionData}>
+    <div
+      className={cx(styles.section, {
+        [styles.stepTwo]: transitionData.isLeaving,
+      })}
+    >
+      <div className={styles.backdrop1} />
+      <div className={styles.backdrop2} />
+      <div className={styles.backdrop3}>
+        <div className={styles.glare} />
       </div>
-    </MotionDiv>
-  );
+    </div>
+  </MotionDiv>
+);
+
+Scene3.propTypes = {
+  transitionData: PropTypes.object.isRequired,
 };
 
 export default Scene3;

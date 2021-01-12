@@ -1,4 +1,4 @@
-const smoothScroll = item => {
+const smoothScroll = (item) => {
   if (typeof window !== 'undefined') {
     const diff = (item.offsetTop - window.scrollY) / 8;
     if (Math.abs(diff) > 64) {

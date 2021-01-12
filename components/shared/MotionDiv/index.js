@@ -1,11 +1,12 @@
+/* eslint-disable no-nested-ternary */
 import PropTypes from 'prop-types';
 import styles from './index.module.scss';
 
 const MotionDiv = ({ children, transitionData, noEntering, noLeaving }) => {
   const {
-    percent,
-    transitionPercent,
-    isVisible,
+    // percent,
+    // transitionPercent,
+    // isVisible,
     isLeaving,
     isEntering,
     leavingPercent,
@@ -16,11 +17,12 @@ const MotionDiv = ({ children, transitionData, noEntering, noLeaving }) => {
     <div
       className={styles.cover}
       style={{
-        opacity: isLeaving
-          ? leavingPercent && !noLeaving
-          : isEntering && !noEntering
-          ? enteringPercent
-          : 1,
+        opacity:
+          isLeaving && !noLeaving
+            ? leavingPercent
+            : isEntering && !noEntering
+            ? enteringPercent
+            : 1,
       }}
     >
       {children}
@@ -35,7 +37,7 @@ MotionDiv.propTypes = {
   noLeaving: PropTypes.bool,
 };
 
-MotionDiv.defaultValues = {
+MotionDiv.defaultProps = {
   noEntering: false,
   noLeaving: false,
 };
