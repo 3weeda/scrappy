@@ -17,11 +17,12 @@ const MotionDiv = ({ children, transitionData, noEntering, noLeaving }) => {
     <div
       className={styles.cover}
       style={{
-        opacity: isLeaving
-          ? leavingPercent && !noLeaving
-          : isEntering && !noEntering
-          ? enteringPercent
-          : 1,
+        opacity:
+          isLeaving && !noLeaving
+            ? leavingPercent
+            : isEntering && !noEntering
+            ? enteringPercent
+            : 1,
       }}
     >
       {children}
