@@ -29,12 +29,26 @@ const Scene6 = ({ transitionData }) => {
         <div className={styles.character}>
           <img src="/assets/images/scene6/2.png" alt="" />
         </div>
-        <Text maxW="650" bottom="15%" left="10%" withBg visible={step === 1}>
+        <Text
+          maxW="800"
+          size="35"
+          bottom="25%"
+          left="10%"
+          withBg
+          visible={step === 1}
+        >
           Around the period when he was stenciling, the city was considering
           defunding the arts program in schools. Scrappy felt this was an
           injustice and unfair to the artists in the community.
         </Text>
-        <Text maxW="650" top="15%" right="5%" withBg visible={step === 2}>
+        <Text
+          maxW="700"
+          size="35"
+          top="15%"
+          right="5%"
+          withBg
+          visible={step === 2}
+        >
           Art was in fact a passion of his and a key distraction from his daily
           hardships. In order to bring light to the subject, Scrappy spent his
           nights sketching up ideas and cuting stencils for the LARGEST project
