@@ -12,10 +12,10 @@ const Scene7 = ({ transitionData }) => {
     // console.log(percent);
     if (percent < 3) {
       setStep(1);
-    } else if (percent > 3 && percent < 6) {
+    } else if (percent > 3 && percent < 7) {
       setStep(2);
-    } else if (percent > 6) {
-      setStep(3);
+    } else if (percent > 7) {
+      setStep(1);
     }
   }, [percent]);
 
@@ -24,11 +24,10 @@ const Scene7 = ({ transitionData }) => {
       <div
         className={cx(styles.section, {
           [styles.stepTwo]: step === 2,
-          [styles.stepThree]: step === 3,
         })}
       >
-        <div className={styles.backdrop1} />
-        <div className={styles.characterLeft}>
+        <div className={styles.backdrop} />
+        <div className={styles.character}>
           <img src="/assets/images/scene7/2.png" alt="" />
         </div>
       </div>

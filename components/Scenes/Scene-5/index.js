@@ -15,10 +15,8 @@ const Scene5 = ({ transitionData }) => {
       setStep(1);
     } else if (percent >= 3 && percent < 6) {
       setStep(2);
-    } else if (percent >= 6 && percent < 9) {
+    } else if (percent >= 6) {
       setStep(3);
-    } else if (percent >= 9) {
-      setStep(4);
     }
   }, [percent]);
 
@@ -28,7 +26,6 @@ const Scene5 = ({ transitionData }) => {
         className={cx(styles.section, {
           [styles.stepTwo]: step === 2,
           [styles.stepThree]: step === 3,
-          [styles.stepFour]: step === 4,
         })}
       >
         <div className={styles.backdrop1} />
@@ -38,10 +35,10 @@ const Scene5 = ({ transitionData }) => {
         </div>
         <div className={styles.backdrop3} />
         <div className={styles.characterLeft}>
-          <img src="/assets/images/scene5/3-1.png" alt="" />
-        </div>
-        <div className={styles.characterLeft}>
-          <img src="/assets/images/scene5/3-2.png" alt="" />
+          <img src="/assets/images/scene5/3.png" alt="" />
+          <div className={styles.hand}>
+            <img src="/assets/images/scene5/5.png" alt="" />
+          </div>
         </div>
         <Text maxW="650" bottom="20%" right="10%" withBg visible={step === 2}>
           After a few years of honing his drawing and writing styles, he would
