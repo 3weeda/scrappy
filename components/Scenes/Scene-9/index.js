@@ -1,17 +1,16 @@
 import PropTypes from 'prop-types';
 import MotionDiv from 'components/shared/MotionDiv';
+import Text from 'components/shared/Text';
 import styles from './index.module.scss';
 
 const Scene9 = ({ transitionData }) => (
   <MotionDiv transitionData={transitionData} noLeaving>
     <div className={styles.section}>
-      <div className={styles.text}>
-        <p>
-          At the end of each school day, Scrappy would walk home from
-          class.Carrying with him, all that pent up anxiety about being teased.
-        </p>
-      </div>
       <div className={styles.backdrop} />
+      <Text maxW="575" bottom="22%" right="10%" withBg visible>
+        At the end of each school day, Scrappy would walk home from class.
+        Carrying with him, all that pent up anxiety about being teased.
+      </Text>
     </div>
   </MotionDiv>
 );
