@@ -9,6 +9,16 @@
     transition: 2s;
   }
 
+  .text1,
+  .text2 {
+    transition-delay: 0.5s !important;
+  }
+
+  .text2 {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
   .backdrop1,
   .backdrop2,
   .backdrop3 {
@@ -46,6 +56,14 @@
 }
 
 .stepTwo {
+  .text1 {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  .text2 {
+    opacity: 1;
+    transform: translateX(0);
+  }
   .backdrop3 {
     opacity: 1;
   }
