@@ -30,14 +30,14 @@ const Scenes = () => {
       padStart={false}
       padEnd={false}
       transitionOverlap={false}
-      transitionSize={0.1}
+      transitionSize={0.02}
       sections={[
         { id: 'intro', height: 1 },
         { id: 'scene1', height: 2 },
-        { id: 'scene2', height: 2 },
-        { id: 'scene3', height: 2 },
-        { id: 'scene4', height: 2 },
-        { id: 'scene5', height: 3 },
+        { id: 'scene2', height: 1 },
+        { id: 'scene3', height: 0.5 },
+        { id: 'scene4', height: 1 },
+        { id: 'scene5', height: 1 },
         { id: 'scene6', height: 2 },
         { id: 'scene7', height: 2 },
         { id: 'scene8', height: 3 },
