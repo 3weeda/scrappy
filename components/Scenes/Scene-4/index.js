@@ -8,10 +8,8 @@ import styles from './index.module.scss';
 const Scene4 = ({ transitionData }) => {
   const [step, setStep] = useState(1);
   const percent = (transitionData.percent * 10).toFixed();
-  const enteringPercent = (transitionData.enteringPercent * 100).toFixed();
 
   useEffect(() => {
-    // console.log(percent);
     if (percent < 5) {
       setStep(1);
     } else if (percent >= 5) {
@@ -26,11 +24,6 @@ const Scene4 = ({ transitionData }) => {
           [styles.stepTwo]: step === 2,
           [styles.stepThree]: transitionData.isLeaving,
         })}
-        style={{
-          transform: `translate(${100 - enteringPercent}%, ${
-            enteringPercent - 100
-          }%)`,
-        }}
       >
         <div className={styles.backdrop1}>
           <Text maxW="520" bottom="15%" right="14%" visible={step === 1}>
@@ -47,7 +40,9 @@ const Scene4 = ({ transitionData }) => {
             depot, he honed his skills.
           </Text>
         </div>
-        <div className={styles.backdrop4} />
+        <div className={styles.backdrop4}>
+          <img src="/assets/images/scene4/3.png" alt="" />
+        </div>
       </div>
     </MotionDiv>
   );

@@ -9,7 +9,6 @@ const Scene7 = ({ transitionData }) => {
   const percent = (transitionData.percent * 10).toFixed();
 
   useEffect(() => {
-    // console.log(percent);
     if (percent < 3) {
       setStep(1);
     } else if (percent > 3 && percent < 7) {
