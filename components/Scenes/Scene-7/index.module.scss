@@ -17,24 +17,54 @@
     background-position: right;
   }
 
-  .character {
+  .characterLeft,
+  .characterRight {
     position: absolute;
-    bottom: 0;
-    left: -22%;
-    height: 80%;
 
     img {
       height: 100%;
     }
   }
+
+  .characterLeft {
+    bottom: 0;
+    left: -23%;
+    height: 80%;
+  }
+
+  .characterRight {
+    bottom: 0;
+    right: 0;
+    height: 83%;
+  }
 }
 
 .stepTwo {
   .backdrop {
-    background-position: left;
+    background-position: 10%;
   }
 
-  .character {
+  .characterLeft {
     left: 0;
+  }
+
+  .characterRight {
+    right: -17%;
+  }
+}
+
+.stepThree {
+  .backdrop {
+    opacity: 0.2;
+  }
+
+  .characterLeft {
+    height: 200%;
+    opacity: 0;
+  }
+
+  .characterRight {
+    height: 200%;
+    opacity: 0;
   }
 }
