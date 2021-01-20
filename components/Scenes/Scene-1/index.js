@@ -10,15 +10,16 @@ const Scene1 = ({ transitionData }) => {
   const percent = (transitionData.percent * 10).toFixed();
 
   useEffect(() => {
-    // console.log(percent);
-    if (percent < 3) {
+    if (percent < 2) {
       setStep(1);
-    } else if (percent >= 3 && percent < 6) {
+    } else if (percent >= 2 && percent < 4) {
       setStep(2);
-    } else if (percent >= 6 && percent < 9) {
+    } else if (percent >= 4 && percent < 6) {
       setStep(3);
-    } else if (percent >= 9) {
+    } else if (percent >= 6 && percent < 8) {
       setStep(4);
+    } else if (percent >= 8) {
+      setStep(5);
     }
   }, [percent]);
 
@@ -29,12 +30,17 @@ const Scene1 = ({ transitionData }) => {
           [styles.stepTwo]: step === 2,
           [styles.stepThree]: step === 3,
           [styles.stepFour]: step === 4,
+          [styles.stepFive]: step === 5,
         })}
       >
         <div className={styles.backdrop1} />
         <div className={styles.backdrop2} />
         <div className={styles.character}>
           <img src="/assets/images/scene1/3.png" alt="" />
+          <img src="/assets/images/scene1/4.png" alt="" />
+          <img src="/assets/images/scene1/5.png" alt="" />
+          <img src="/assets/images/scene1/6.png" alt="" />
+          <img src="/assets/images/scene1/7.png" alt="" />
         </div>
         <div className={styles.people}>
           <img src="/assets/images/scene1/8.png" alt="" />
@@ -44,7 +50,13 @@ const Scene1 = ({ transitionData }) => {
           bit of distrust for the system and feel neglected and unloved by his
           parents who should have shown him unconditional love.
         </Text>
-        <Text size="34" bottom="30%" left="45%" visible={step === 3}>
+        <Text
+          size="34"
+          bottom="30%"
+          left="45%"
+          visible={step === 3 || step === 4}
+          className={styles.text}
+        >
           That young man, Scrappy began to rebel as a tween. Pursuing an outlet
           for his frustration for feeling different, and not fting in with other
           classmates. Always questioning why those that should have been there

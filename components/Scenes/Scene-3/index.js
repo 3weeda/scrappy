@@ -11,9 +11,13 @@ const Scene3 = ({ transitionData }) => (
       })}
     >
       <div className={styles.backdrop1} />
-      <div className={styles.backdrop2} />
-      <div className={styles.backdrop3}>
-        <div className={styles.glare} />
+      <div className={styles.backdrop2}>
+        <img src="/assets/images/scene3/2-1.png" alt="" />
+      </div>
+      <div className={styles.backgroundContainer}>
+        <div className={styles.backdrop3}>
+          <div className={styles.glare} />
+        </div>
       </div>
     </div>
   </MotionDiv>

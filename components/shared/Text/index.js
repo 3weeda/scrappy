@@ -13,9 +13,10 @@ const Text = ({
   maxW,
   visible,
   withBg,
+  className,
 }) => (
   <div
-    className={cx(styles.text, { [styles.withBg]: withBg })}
+    className={cx(styles.text, className, { [styles.withBg]: withBg })}
     style={{
       fontSize: `${size}px`,
       lineHeight: `${line}px`,
@@ -42,6 +43,7 @@ Text.propTypes = {
   maxW: PropTypes.string,
   withBg: PropTypes.bool,
   visible: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 Text.defaultProps = {
@@ -54,6 +56,7 @@ Text.defaultProps = {
   maxW: '610',
   withBg: false,
   visible: false,
+  className: '',
 };
 
 export default Text;

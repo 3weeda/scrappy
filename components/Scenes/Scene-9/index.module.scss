@@ -17,9 +17,18 @@
   .backdrop {
     position: absolute;
     @include fullSize;
-    @include bgCover;
+    background-position: bottom left;
     background-image: url('/assets/images/scene9/1.png');
     animation-name: toggleBg;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+  }
+
+  img {
+    position: absolute;
+    bottom: 362px;
+    left: 242px;
+    animation-name: toggleHead;
     animation-iteration-count: infinite;
     animation-duration: 3s;
   }
@@ -34,5 +43,16 @@
   }
   100% {
     background-image: url('/assets/images/scene9/1.png');
+  }
+}
+@keyframes toggleHead {
+  0% {
+    transform: none;
+  }
+  50% {
+    transform: rotate(6deg) translateX(15px);
+  }
+  100% {
+    transform: none;
   }
 }

@@ -8,7 +8,7 @@
 
   .backdrop1,
   .backdrop2,
-  .backdrop3 {
+  .backgroundContainer {
     position: relative;
     width: calc(100% / 3);
     background-repeat: no-repeat;
@@ -17,41 +17,71 @@
     overflow: hidden;
     transition: 0.5s;
     z-index: 2;
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
   }
+
   .backdrop1 {
+    transform: translateY(100vh);
     background-image: url('/assets/images/scene3/1.png');
     &:hover {
       background-image: url('/assets/images/scene3/1-2.png');
     }
   }
   .backdrop2 {
+    transform: translateY(-100vh);
     background-image: url('/assets/images/scene3/2.png');
+
+    img {
+      position: absolute;
+      bottom: 46.5%;
+      left: 50.2%;
+      transform-origin: bottom;
+      transform: translate(-50%);
+      transition: 0.5s;
+    }
     &:hover {
-      background-image: url('/assets/images/scene3/2-1.png');
+      img {
+        transform: translate(-50%) rotate(5deg);
+      }
     }
   }
-  .backdrop3 {
-    background-image: url('/assets/images/scene3/3.png');
-    background-size: cover;
-    z-index: 1;
+  .backgroundContainer {
+    transform: translateY(40vh);
 
-    .glare {
-      position: absolute;
-      background-image: url('/assets/images/scene3/3-2.png');
+    .backdrop3 {
       width: 100%;
-      height: 500px;
-      bottom: 25%;
-      right: -20%;
+      height: 100%;
+      background-image: url('/assets/images/scene3/3.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 1;
       transition: 0.5s;
-      opacity: 0.4;
-    }
 
-    &:hover {
-      transform: scale(1.15);
+      @media (min-width: 1880px) {
+        background-size: cover;
+      }
 
       .glare {
-        bottom: 2%;
-        right: 0;
+        position: absolute;
+        background-image: url('/assets/images/scene3/3-2.png');
+        width: 100%;
+        height: 500px;
+        bottom: 25%;
+        right: -20%;
+        transition: 0.5s;
+        opacity: 0.4;
+      }
+
+      &:hover {
+        transform: scale(1.15);
+
+        .glare {
+          bottom: 2%;
+          right: 0;
+        }
       }
     }
   }
@@ -59,4 +89,11 @@
 
 .stepTwo {
   opacity: 0.2;
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

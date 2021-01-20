@@ -30,14 +30,14 @@
 
   .backdrop3 {
     background-image: url('/assets/images/scene5/2-2.png');
+    background-position: right;
   }
 
   .characterRight {
     position: absolute;
-    right: 10%;
+    right: -50%;
     bottom: 0;
     height: 100%;
-    opacity: 0;
 
     img {
       height: 100%;
@@ -53,12 +53,23 @@
       position: absolute;
       top: 3.5%;
       right: -96%;
-      animation-name: toggleHand;
-      animation-iteration-count: infinite;
-      animation-duration: 2s;
       transform-origin: bottom left;
-      animation-play-state: paused;
+      transition: 1s;
+      transition-delay: 1s;
     }
+  }
+
+  .text {
+    right: 19% !important;
+  }
+
+  .car {
+    position: absolute;
+    left: -250vh;
+    bottom: -25%;
+    transition: 3s;
+    z-index: 100;
+    transition-delay: 1s;
   }
 }
 
@@ -68,30 +79,81 @@
     left: 24%;
 
     .hand {
-      animation-play-state: running;
+      transform: rotate(10deg) translateX(0px);
     }
   }
+
   .backdrop2 {
     opacity: 1;
+    transition: 2s;
     transition-delay: 1s !important;
+  }
+  .text {
+    right: 10% !important;
+  }
+  .car {
+    left: 250vh;
   }
 }
 
 .stepThree {
+  .characterLeft {
+    > img {
+      animation-name: toggleCharLeft;
+      animation-iteration-count: infinite;
+      animation-duration: 1s;
+      animation-delay: 1s;
+      transform-origin: bottom;
+    }
+
+    .hand {
+      animation-name: toggleHand;
+      animation-iteration-count: infinite;
+      animation-duration: 1s;
+      animation-delay: 1s;
+    }
+  }
   .characterRight {
-    opacity: 1;
     right: 14%;
+    animation-name: toggleCharRight;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-delay: 1s;
+  }
+}
+
+@keyframes toggleCharLeft {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(1deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes toggleCharRight {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(30px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 
 @keyframes toggleHand {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(10deg) translate(2px, 2px);
   }
   50% {
-    transform: rotate(15deg) translateX(-5px);
+    transform: rotate(0deg) translate(7px, 2px);
   }
   100% {
-    transform: rotate(0deg);
+    transform: rotate(10deg) translate(2px, 2px);
   }
 }
