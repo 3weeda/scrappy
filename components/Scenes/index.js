@@ -38,9 +38,9 @@ const Scenes = () => {
         { id: 'scene3', height: 0.5 },
         { id: 'scene4', height: 1 },
         { id: 'scene5', height: 1 },
-        { id: 'scene6', height: 2 },
-        { id: 'scene7', height: 2 },
-        { id: 'scene8', height: 3 },
+        { id: 'scene6', height: 1 },
+        { id: 'scene7', height: 1 },
+        { id: 'scene8', height: 2 },
         { id: 'scene9', height: 1 },
       ]}
       render={(id, transitionData) => {
