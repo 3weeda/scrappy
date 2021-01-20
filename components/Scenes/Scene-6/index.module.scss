@@ -5,16 +5,6 @@
   @include fullSize;
   overflow: hidden;
 
-  .text {
-    position: absolute;
-    z-index: 1;
-    max-width: 700px;
-    color: var(--white);
-    font-size: 34px;
-    line-height: 1.62;
-    transition: 2s;
-  }
-
   .backdrop {
     position: absolute;
     @include fullSize;
@@ -33,10 +23,31 @@
       height: 100%;
     }
   }
+
+  .text2 {
+    transform: translateX(70%);
+  }
 }
 
-.stepTwo {
+.stepTwo,
+.stepThree {
   .character {
     transform: translate(-70%, 18%) scale(0.55);
+  }
+
+  .text1 {
+    transform: translateX(-70%);
+    transition-delay: 0.4s !important;
+  }
+  .text2 {
+    transform: translateX(0%);
+    transition-delay: 0.4s !important;
+  }
+}
+
+.stepThree {
+  .text2 {
+    transform: translateX(-10%);
+    transition-delay: 0s !important;
   }
 }

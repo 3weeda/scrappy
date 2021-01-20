@@ -18,16 +18,27 @@ const Intro = ({ transitionData }) => {
         setLoading(loading - 1);
       }, 10);
     }
+    document.body.setAttribute(
+      'style',
+      `${
+        loading
+          ? 'overflow: hidden; max-height: 100vh;'
+          : 'overflow: unset; max-height: unset;'
+      }`
+    );
     return () => {
       clearInterval(intervalId);
+      document.body.setAttribute(
+        'style',
+        'overflow: unset; max-height: unset;'
+      );
     };
   }, [loading]);
 
   useEffect(() => {
-    // console.log(percent);
     if (percent < 5) {
       setStep(1);
-    } else if (percent > 5) {
+    } else if (percent > 5 && !loading) {
       setStep(2);
     }
   }, [percent]);

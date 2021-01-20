@@ -10,7 +10,6 @@ const Scene5 = ({ transitionData }) => {
   const percent = (transitionData.percent * 10).toFixed();
 
   useEffect(() => {
-    // console.log(percent);
     if (percent < 3) {
       setStep(1);
     } else if (percent >= 3 && percent < 6) {
@@ -40,12 +39,21 @@ const Scene5 = ({ transitionData }) => {
             <img src="/assets/images/scene5/5.png" alt="" />
           </div>
         </div>
-        <Text maxW="650" bottom="20%" right="10%" withBg visible={step === 2}>
+        <Text
+          maxW="650"
+          bottom="20%"
+          withBg
+          className={styles.text}
+          visible={step === 2}
+        >
           After a few years of honing his drawing and writing styles, he would
           cut stencils and go out and paint them in the streets over the
           weekend. Posting these stencils up began to give Scrappy a boosted
           selfconfdence, something teenagers of his age can struggle with.
         </Text>
+        <div className={styles.car}>
+          <img src="/assets/images/scene5/6.png" alt="" />
+        </div>
       </div>
     </MotionDiv>
   );

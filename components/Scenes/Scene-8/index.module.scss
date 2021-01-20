@@ -6,7 +6,7 @@
   overflow: hidden;
 
   > * {
-    transition: 2s;
+    transition: all 2s;
   }
 
   .backdrop {
@@ -28,16 +28,21 @@
 
 .stepTwo {
   .backdrop {
-    transform: scale(1.4);
-    transform-origin: bottom left;
-    background-position: 100% 0;
+    background-size: 140%;
+    background-position: bottom right;
   }
 }
 
 .stepThree {
   .backdrop {
-    transform: scale(1.4);
-    transform-origin: bottom right;
-    background-position: 100% 100%;
+    background-size: 140%;
+    background-position: bottom left;
+  }
+}
+
+.stepFour {
+  .backdrop {
+    background-size: cover;
+    background-position: center;
   }
 }

@@ -9,13 +9,12 @@ const Scene7 = ({ transitionData }) => {
   const percent = (transitionData.percent * 10).toFixed();
 
   useEffect(() => {
-    // console.log(percent);
-    if (percent < 3) {
+    if (percent < 4) {
       setStep(1);
-    } else if (percent > 3 && percent < 7) {
+    } else if (percent >= 4 && percent < 7) {
       setStep(2);
-    } else if (percent > 7) {
-      setStep(1);
+    } else if (percent >= 7) {
+      setStep(3);
     }
   }, [percent]);
 
@@ -24,11 +23,15 @@ const Scene7 = ({ transitionData }) => {
       <div
         className={cx(styles.section, {
           [styles.stepTwo]: step === 2,
+          [styles.stepThree]: step === 3,
         })}
       >
         <div className={styles.backdrop} />
-        <div className={styles.character}>
+        <div className={styles.characterLeft}>
           <img src="/assets/images/scene7/2.png" alt="" />
+        </div>
+        <div className={styles.characterRight}>
+          <img src="/assets/images/scene7/3.png" alt="" />
         </div>
       </div>
     </MotionDiv>

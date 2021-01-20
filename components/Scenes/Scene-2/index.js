@@ -10,12 +10,11 @@ const Scene2 = ({ transitionData }) => {
   const percent = (transitionData.percent * 10).toFixed();
 
   useEffect(() => {
-    // console.log(percent);
-    if (percent < 5) {
+    if (percent < 4) {
       setStep(1);
-    } else if (percent > 5 && percent < 8) {
+    } else if (percent >= 4 && percent < 7) {
       setStep(2);
-    } else if (percent > 8) {
+    } else if (percent >= 7) {
       setStep(3);
     }
   }, [percent]);
@@ -37,11 +36,23 @@ const Scene2 = ({ transitionData }) => {
         </div>
         <div className={styles.backdrop2} />
         <div className={styles.backdrop3} />
-        <Text maxW="580" top="30%" left="12%" visible={step === 1}>
+        <Text
+          maxW="580"
+          top="34%"
+          left="12%"
+          visible={step === 1}
+          className={styles.text1}
+        >
           Scrappy was poor, and in school his classmates would tease and harass
           him about it. He felt bad that his kicks were torn up and generic.
         </Text>
-        <Text maxW="460" top="22%" right="18%" visible={step === 2}>
+        <Text
+          maxW="460"
+          top="22%"
+          right="18%"
+          visible={step === 2}
+          className={styles.text2}
+        >
           All he wanted to rock were the same shoes as his skateboard heroes,
           and the popular kids in his class.
         </Text>
