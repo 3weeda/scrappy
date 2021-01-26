@@ -18,7 +18,7 @@
     position: absolute;
     @include fullSize;
     background-position: bottom left;
-    background-image: url('/assets/images/scene9/1.png');
+    background-image: url('/assets/images/scene9/1.jpg');
     animation-name: toggleBg;
     animation-iteration-count: infinite;
     animation-duration: 3s;
@@ -36,13 +36,13 @@
 
 @keyframes toggleBg {
   0% {
-    background-image: url('/assets/images/scene9/1.png');
+    background-image: url('/assets/images/scene9/1.jpg');
   }
   50% {
-    background-image: url('/assets/images/scene9/2.png');
+    background-image: url('/assets/images/scene9/2.jpg');
   }
   100% {
-    background-image: url('/assets/images/scene9/1.png');
+    background-image: url('/assets/images/scene9/1.jpg');
   }
 }
 @keyframes toggleHead {

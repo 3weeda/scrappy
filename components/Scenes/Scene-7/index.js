@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import Image from 'next/image';
 import cx from 'classnames';
 import MotionDiv from 'components/shared/MotionDiv';
 import UseStepper from 'components/shared/useStepper';

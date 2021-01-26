@@ -31,7 +31,7 @@ const Header = ({ hideLogo }) => {
         </div>
         {!hideLogo ? (
           <div className={styles.logo}>
-            <img src="/assets/images/logo-red.png" alt="" />
+            <img src="/assets/images/intro/logo-red.png" alt="" />
           </div>
         ) : null}
         <div className={styles.options}>

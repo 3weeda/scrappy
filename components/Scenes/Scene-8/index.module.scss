@@ -13,7 +13,7 @@
     position: absolute;
     @include fullSize;
     @include bgCover;
-    background-image: url('/assets/images/scene8/1.png');
+    background-image: url('/assets/images/scene8/1.jpg');
     background-position: bottom right;
   }
 }
@@ -22,7 +22,7 @@
 .stepThree,
 .stepFour {
   .backdrop {
-    background-image: url('/assets/images/scene8/1-2.png');
+    background-image: url('/assets/images/scene8/1-2.jpg');
   }
 }
 

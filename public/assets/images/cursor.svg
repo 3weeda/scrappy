@@ -1,9 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="110" height="110" viewBox="0 0 110 110">
-  <g id="crusel" transform="translate(-570 -365)">
-    <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(570 365)" fill="none" stroke="#c7b000" stroke-width="3">
-      <circle cx="55" cy="55" r="55" stroke="none"/>
-      <circle cx="55" cy="55" r="53.5" fill="none"/>
-    </g>
-    <circle id="Ellipse_2" data-name="Ellipse 2" cx="13" cy="13" r="13" transform="translate(619 411)" fill="#fff8fa"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 110" width="110" height="110">
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: none } 
+		.shp1 { fill: none;stroke: #c7b000;stroke-width: 3 } 
+		.shp2 { fill: #fff8fa } 
+	</style>
+	<g id="crusel">
+		<g id="Ellipse_1">
+			<path id="Layer" class="shp0" d="M55 110C24.58 110 0 85.42 0 55C0 24.58 24.58 0 55 0C85.42 0 110 24.58 110 55C110 85.42 85.42 110 55 110Z" />
+			<path id="Layer" class="shp1" d="M55 108.5C25.41 108.5 1.5 84.59 1.5 55C1.5 25.41 25.41 1.5 55 1.5C84.59 1.5 108.5 25.41 108.5 55C108.5 84.59 84.59 108.5 55 108.5Z" />
+		</g>
+		<path id="Ellipse_2" class="shp2" d="M62 72C54.81 72 49 66.19 49 59C49 51.81 54.81 46 62 46C69.19 46 75 51.81 75 59C75 66.19 69.19 72 62 72Z" />
+	</g>
 </svg>
