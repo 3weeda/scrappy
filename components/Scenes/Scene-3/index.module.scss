@@ -25,14 +25,14 @@
 
   .backdrop1 {
     transform: translateY(100vh);
-    background-image: url('/assets/images/scene3/1.png');
+    background-image: url('/assets/images/scene3/1.jpg');
     &:hover {
-      background-image: url('/assets/images/scene3/1-2.png');
+      background-image: url('/assets/images/scene3/1-2.jpg');
     }
   }
   .backdrop2 {
     transform: translateY(-100vh);
-    background-image: url('/assets/images/scene3/2.png');
+    background-image: url('/assets/images/scene3/2.jpg');
 
     img {
       position: absolute;
@@ -54,7 +54,7 @@
     .backdrop3 {
       width: 100%;
       height: 100%;
-      background-image: url('/assets/images/scene3/3.png');
+      background-image: url('/assets/images/scene3/3.jpg');
       background-repeat: no-repeat;
       background-position: center;
       z-index: 1;

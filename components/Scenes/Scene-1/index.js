@@ -1,27 +1,13 @@
-import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import Image from 'next/image';
 import cx from 'classnames';
 import MotionDiv from 'components/shared/MotionDiv';
+import UseStepper from 'components/shared/useStepper';
 import Text from 'components/shared/Text';
 import styles from './index.module.scss';
 
 const Scene1 = ({ transitionData }) => {
-  const [step, setStep] = useState(1);
-  const percent = (transitionData.percent * 10).toFixed();
-
-  useEffect(() => {
-    if (percent < 2) {
-      setStep(1);
-    } else if (percent >= 2 && percent < 4) {
-      setStep(2);
-    } else if (percent >= 4 && percent < 6) {
-      setStep(3);
-    } else if (percent >= 6 && percent < 8) {
-      setStep(4);
-    } else if (percent >= 8) {
-      setStep(5);
-    }
-  }, [percent]);
+  const step = UseStepper(transitionData, [2, 4, 6, 8, 10]);
 
   return (
     <MotionDiv transitionData={transitionData}>
@@ -33,8 +19,22 @@ const Scene1 = ({ transitionData }) => {
           [styles.stepFive]: step === 5,
         })}
       >
-        <div className={styles.backdrop1} />
-        <div className={styles.backdrop2} />
+        <div className={styles.backdrop1}>
+          <Image
+            src="/assets/images/scene1/1.png"
+            alt=""
+            layout="fill"
+            loading="eager"
+          />
+        </div>
+        <div className={styles.backdrop2}>
+          <Image
+            src="/assets/images/scene1/2.png"
+            alt=""
+            layout="fill"
+            loading="eager"
+          />
+        </div>
         <div className={styles.character}>
           <img src="/assets/images/scene1/3.png" alt="" />
           <img src="/assets/images/scene1/4.png" alt="" />

@@ -1,23 +1,13 @@
-import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import Image from 'next/image';
 import cx from 'classnames';
 import MotionDiv from 'components/shared/MotionDiv';
+import UseStepper from 'components/shared/useStepper';
 import Text from 'components/shared/Text';
 import styles from './index.module.scss';
 
 const Scene2 = ({ transitionData }) => {
-  const [step, setStep] = useState(1);
-  const percent = (transitionData.percent * 10).toFixed();
-
-  useEffect(() => {
-    if (percent < 4) {
-      setStep(1);
-    } else if (percent >= 4 && percent < 7) {
-      setStep(2);
-    } else if (percent >= 7) {
-      setStep(3);
-    }
-  }, [percent]);
+  const step = UseStepper(transitionData, [4, 7, 10]);
 
   return (
     <MotionDiv transitionData={transitionData}>
@@ -27,15 +17,36 @@ const Scene2 = ({ transitionData }) => {
           [styles.stepThree]: step === 3,
         })}
       >
-        <div className={styles.backdrop1} />
+        <div className={styles.backdrop1}>
+          <Image
+            src="/assets/images/scene2/1.jpg"
+            alt=""
+            layout="fill"
+            loading="eager"
+          />
+        </div>
         <div className={styles.peopleRight}>
           <img src="/assets/images/scene2/3.png" alt="" />
         </div>
         <div className={styles.peopleLeft}>
           <img src="/assets/images/scene2/2.png" alt="" />
         </div>
-        <div className={styles.backdrop2} />
-        <div className={styles.backdrop3} />
+        <div className={styles.backdrop2}>
+          <Image
+            src="/assets/images/scene2/over1.png"
+            alt=""
+            layout="fill"
+            loading="eager"
+          />
+        </div>
+        <div className={styles.backdrop3}>
+          <Image
+            src="/assets/images/scene2/over2.png"
+            alt=""
+            layout="fill"
+            loading="eager"
+          />
+        </div>
         <Text
           maxW="580"
           top="34%"

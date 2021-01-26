@@ -31,6 +31,7 @@ const Scenes = () => {
       padEnd={false}
       transitionOverlap={false}
       transitionSize={0.02}
+      // dynamicLoading={false}
       sections={[
         { id: 'intro', height: 1 },
         { id: 'scene1', height: 2 },

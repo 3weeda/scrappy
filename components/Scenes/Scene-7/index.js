@@ -1,22 +1,12 @@
-import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import Image from 'next/image';
 import cx from 'classnames';
 import MotionDiv from 'components/shared/MotionDiv';
+import UseStepper from 'components/shared/useStepper';
 import styles from './index.module.scss';
 
 const Scene7 = ({ transitionData }) => {
-  const [step, setStep] = useState(1);
-  const percent = (transitionData.percent * 10).toFixed();
-
-  useEffect(() => {
-    if (percent < 4) {
-      setStep(1);
-    } else if (percent >= 4 && percent < 7) {
-      setStep(2);
-    } else if (percent >= 7) {
-      setStep(3);
-    }
-  }, [percent]);
+  const step = UseStepper(transitionData, [4, 7, 10]);
 
   return (
     <MotionDiv transitionData={transitionData}>

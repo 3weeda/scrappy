@@ -26,15 +26,8 @@
     @include fullSize;
     @include bgCover;
   }
-  .backdrop1 {
-    background-image: url('/assets/images/scene2/1.png');
-  }
-  .backdrop2 {
-    background-image: url('/assets/images/scene2/over1.png');
-  }
   .backdrop3 {
     opacity: 0;
-    background-image: url('/assets/images/scene2/over2.png');
   }
   .peopleLeft,
   .peopleRight {
