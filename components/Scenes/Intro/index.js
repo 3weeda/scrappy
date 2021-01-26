@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import MotionDiv from 'components/shared/MotionDiv';
@@ -16,7 +17,7 @@ const Intro = ({ transitionData }) => {
     if (loading) {
       intervalId = setInterval(() => {
         setLoading(loading - 1);
-      }, 10);
+      }, 50);
     }
     document.body.setAttribute(
       'style',
@@ -82,7 +83,12 @@ const Intro = ({ transitionData }) => {
                   <p>Scroll</p>
                 </div>
                 <div className={styles.arrow}>
-                  <img src="/assets/images/down-arrow.svg" alt="Scroll" />
+                  <Image
+                    src="/assets/images/intro/down-arrow.svg"
+                    alt="Scroll"
+                    width="24"
+                    height="auto"
+                  />
                 </div>
               </div>
             </div>

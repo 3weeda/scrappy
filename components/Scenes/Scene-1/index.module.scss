@@ -14,14 +14,12 @@
     position: absolute;
     @include fullSize;
     @include bgCover;
-    background-image: url('/assets/images/scene1/1.png');
   }
   .backdrop2 {
     position: absolute;
     left: 20%;
     @include fullSize;
     @include bgCover;
-    background-image: url('/assets/images/scene1/2.png');
   }
   .character {
     position: absolute;

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import Image from 'next/image';
 import cx from 'classnames';
 import MotionDiv from 'components/shared/MotionDiv';
 import UseStepper from 'components/shared/useStepper';
@@ -18,8 +19,22 @@ const Scene1 = ({ transitionData }) => {
           [styles.stepFive]: step === 5,
         })}
       >
-        <div className={styles.backdrop1} />
-        <div className={styles.backdrop2} />
+        <div className={styles.backdrop1}>
+          <Image
+            src="/assets/images/scene1/1.png"
+            alt=""
+            layout="fill"
+            loading="eager"
+          />
+        </div>
+        <div className={styles.backdrop2}>
+          <Image
+            src="/assets/images/scene1/2.png"
+            alt=""
+            layout="fill"
+            loading="eager"
+          />
+        </div>
         <div className={styles.character}>
           <img src="/assets/images/scene1/3.png" alt="" />
           <img src="/assets/images/scene1/4.png" alt="" />

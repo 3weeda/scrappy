@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import Image from 'next/image';
 import cx from 'classnames';
 import MotionDiv from 'components/shared/MotionDiv';
 import UseStepper from 'components/shared/useStepper';
@@ -22,7 +23,14 @@ const Scene4 = ({ transitionData }) => {
             Carrying with him, all that pent up anxiety about being teased.
           </Text>
         </div>
-        <div className={styles.backdrop2} />
+        <div className={styles.backdrop2}>
+          <Image
+            src="/assets/images/scene4/1.png"
+            alt=""
+            layout="fill"
+            loading="eager"
+          />
+        </div>
         <div className={styles.backdrop3}>
           <Text maxW="600" top="25%" left="7%" visible={step === 2}>
             His walks consisted of crossing train tracks and searching for empty

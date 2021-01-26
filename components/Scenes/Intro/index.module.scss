@@ -5,7 +5,7 @@
   height: 100vh;
   overflow: hidden;
   @include flexColumn;
-  background: center no-repeat url('/assets/images/scene-1.png'),
+  background: center no-repeat url('/assets/images/intro/intro.jpg'),
     linear-gradient(rgba(0, 0, 0, 1.8), rgba(0, 0, 0, 1.8));
   padding-top: 135px;
 

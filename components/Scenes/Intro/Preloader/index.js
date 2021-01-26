@@ -11,10 +11,10 @@ const Preloader = ({ loading, animateUp }) => (
     )}
   >
     <div className={styles.logo} style={{ height: `${loading}%` }}>
-      <img src="/assets/images/logo-white.png" alt="" />
+      <img src="/assets/images/intro/logo-white.png" alt="" />
     </div>
     <div className={styles.logo}>
-      <img src="/assets/images/logo-red.png" alt="" />
+      <img src="/assets/images/intro/logo-red.png" alt="" />
     </div>
   </div>
 );
