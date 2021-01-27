@@ -22,7 +22,10 @@ const Scene6 = ({ transitionData }) => {
             src="/assets/images/scene6/1.jpg"
             alt=""
             layout="fill"
+            objectFit="cover"
+            objectPosition="bottom right"
             loading="eager"
+            quality={100}
           />
         </div>
         <div className={styles.character}>

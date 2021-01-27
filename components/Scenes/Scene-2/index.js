@@ -22,7 +22,10 @@ const Scene2 = ({ transitionData }) => {
             src="/assets/images/scene2/1.jpg"
             alt=""
             layout="fill"
+            objectFit="cover"
+            objectPosition="center"
             loading="eager"
+            quality={100}
           />
         </div>
         <div className={styles.peopleRight}>
@@ -36,6 +39,8 @@ const Scene2 = ({ transitionData }) => {
             src="/assets/images/scene2/over1.png"
             alt=""
             layout="fill"
+            objectFit="cover"
+            objectPosition="center"
             loading="eager"
           />
         </div>
@@ -44,6 +49,8 @@ const Scene2 = ({ transitionData }) => {
             src="/assets/images/scene2/over2.png"
             alt=""
             layout="fill"
+            objectFit="cover"
+            objectPosition="center"
             loading="eager"
           />
         </div>

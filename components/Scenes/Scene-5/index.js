@@ -22,7 +22,9 @@ const Scene5 = ({ transitionData }) => {
             src="/assets/images/scene5/1.jpg"
             alt=""
             layout="fill"
+            objectFit="cover"
             loading="eager"
+            quality={100}
           />
         </div>
         <div className={styles.backdrop2}>
@@ -30,7 +32,10 @@ const Scene5 = ({ transitionData }) => {
             src="/assets/images/scene5/2-1.jpg"
             alt=""
             layout="fill"
+            objectFit="cover"
+            objectPosition="bottom left"
             loading="eager"
+            quality={100}
           />
         </div>
         <div className={styles.characterRight}>
@@ -41,7 +46,10 @@ const Scene5 = ({ transitionData }) => {
             src="/assets/images/scene5/2-2.png"
             alt=""
             layout="fill"
+            objectFit="cover"
+            objectPosition="bottom left"
             loading="eager"
+            quality={100}
           />
         </div>
         <div className={styles.characterLeft}>
