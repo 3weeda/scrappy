@@ -33,22 +33,22 @@ const Scenes = () => {
       transitionSize={0.02}
       // dynamicLoading={false}
       sections={[
-        { id: 'intro', height: 1 },
-        { id: 'scene1', height: 2 },
-        { id: 'scene2', height: 1 },
-        { id: 'scene3', height: 0.5 },
-        { id: 'scene4', height: 1 },
-        { id: 'scene5', height: 1 },
-        { id: 'scene6', height: 1 },
-        { id: 'scene7', height: 1 },
-        { id: 'scene8', height: 2 },
+        { id: 'intro', height: 2 },
+        { id: 'scene1', height: 3 },
+        { id: 'scene2', height: 2 },
+        { id: 'scene3', height: 1 },
+        { id: 'scene4', height: 2 },
+        { id: 'scene5', height: 2 },
+        { id: 'scene6', height: 2 },
+        { id: 'scene7', height: 2 },
+        { id: 'scene8', height: 3 },
         { id: 'scene9', height: 1 },
       ]}
       render={(id, transitionData) => {
         const Screen = screens[id] || null;
 
         return (
-          <Layout hideLogo={id === 'intro'}>
+          <Layout pageId={id} hideLogo={id === 'intro'}>
             <Screen transitionData={transitionData} />
           </Layout>
         );
