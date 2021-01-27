@@ -1,0 +1,26 @@
+.footer {
+  position: absolute;
+  z-index: 100;
+  bottom: 66px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 60px;
+  font-family: HelveticaNeue;
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 500;
+
+  .scenes {
+    display: flex;
+
+    > p {
+      margin-right: 45px;
+
+      span {
+        color: var(--lightGrey);
+      }
+    }
+  }
+}
