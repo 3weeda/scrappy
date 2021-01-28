@@ -88,6 +88,7 @@ const Intro = ({ transitionData }) => {
                     alt="Scroll"
                     width="24"
                     height="auto"
+                    quality={100}
                   />
                 </div>
               </div>

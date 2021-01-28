@@ -1,7 +1,7 @@
 .preloader {
   position: relative;
-  width: 748px;
-  height: 340px;
+  width: 500px;
+  height: 222px;
   margin: 10% 40px 80px;
   transition: 2s;
 
@@ -17,7 +17,7 @@
     }
 
     img {
-      width: 748px;
+      width: 500px;
       transition: 2s;
     }
 
@@ -28,15 +28,7 @@
 }
 
 .small {
-  width: 518px;
-  height: 229px;
   margin: 0 40px 70px;
-
-  .logo {
-    img {
-      width: 518px;
-    }
-  }
 }
 
 .above {
