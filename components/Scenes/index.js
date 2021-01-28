@@ -29,9 +29,7 @@ const Scenes = () => {
     <ScrollTransitions
       padStart={false}
       padEnd={false}
-      transitionOverlap={false}
-      transitionSize={0.02}
-      // dynamicLoading={false}
+      transitionSize={0.1}
       sections={[
         { id: 'intro', height: 2 },
         { id: 'scene1', height: 3 },
