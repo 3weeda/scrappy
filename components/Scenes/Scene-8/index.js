@@ -18,7 +18,7 @@ const Scene8 = ({ transitionData }) => {
         })}
       >
         <div className={styles.backdrop} />
-        <Text maxW="650" size="35" top="12%" left="26%" visible={step === 3}>
+        <Text maxW="550" size="35" top="15%" left="30%" visible={step === 2}>
           Around the period when he was stenciling, the city was considering
           defunding the arts program in schools. Scrappy felt this was an
           injustice and unfair to the artists in the community.

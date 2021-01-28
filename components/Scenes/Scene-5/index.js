@@ -23,6 +23,7 @@ const Scene5 = ({ transitionData }) => {
             alt=""
             layout="fill"
             objectFit="cover"
+            objectPosition="bottom left"
             loading="eager"
             quality={100}
           />
