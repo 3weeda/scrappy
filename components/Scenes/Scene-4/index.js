@@ -28,7 +28,10 @@ const Scene4 = ({ transitionData }) => {
             src="/assets/images/scene4/1.png"
             alt=""
             layout="fill"
+            objectFit="cover"
+            objectPosition="bottom right"
             loading="eager"
+            quality={100}
           />
         </div>
         <div className={styles.backdrop3}>

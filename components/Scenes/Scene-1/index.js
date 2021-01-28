@@ -7,7 +7,7 @@ import Text from 'components/shared/Text';
 import styles from './index.module.scss';
 
 const Scene1 = ({ transitionData }) => {
-  const step = UseStepper(transitionData, [2, 4, 6, 8, 10]);
+  const step = UseStepper(transitionData, [2, 4, 6, 9, 10]);
 
   return (
     <MotionDiv transitionData={transitionData}>

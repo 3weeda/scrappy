@@ -62,7 +62,7 @@
 
   .car {
     position: absolute;
-    left: -250vh;
+    left: -300vh;
     bottom: -25%;
     transition: 3s;
     z-index: 100;
@@ -77,12 +77,16 @@
 
     .hand {
       transform: rotate(10deg) translateX(0px);
+      animation-name: toggleHand;
+      animation-iteration-count: infinite;
+      animation-duration: 1s;
+      animation-delay: 1s;
     }
   }
 
   .backdrop2 {
     opacity: 1;
-    transition: 2s;
+    transition: 5s;
     transition-delay: 1s !important;
   }
   .text {
@@ -101,13 +105,6 @@
       animation-duration: 1s;
       animation-delay: 1s;
       transform-origin: bottom;
-    }
-
-    .hand {
-      animation-name: toggleHand;
-      animation-iteration-count: infinite;
-      animation-duration: 1s;
-      animation-delay: 1s;
     }
   }
   .characterRight {
@@ -145,12 +142,12 @@
 
 @keyframes toggleHand {
   0% {
-    transform: rotate(10deg) translate(2px, 2px);
+    transform: rotate(0deg) translateX(1px);
   }
   50% {
-    transform: rotate(0deg) translate(7px, 2px);
+    transform: rotate(7deg) translateX(0px);
   }
   100% {
-    transform: rotate(10deg) translate(2px, 2px);
+    transform: rotate(0deg) translateX(1px);
   }
 }
