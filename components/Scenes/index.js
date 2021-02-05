@@ -1,4 +1,5 @@
 import ScrollTransitions from 'react-scroll-transitions';
+import { useEffect, useState } from 'react';
 import Layout from 'layout/Layout';
 import Intro from './Intro';
 import Scene1 from './Scene-1';
@@ -12,6 +13,33 @@ import Scene8 from './Scene-8';
 import Scene9 from './Scene-9';
 
 const Scenes = () => {
+  const [loading, setLoading] = useState(100);
+
+  // TODO: Change to actual loading time for all assets
+  useEffect(() => {
+    let intervalId;
+    if (loading) {
+      intervalId = setInterval(() => {
+        setLoading(loading - 1);
+      }, 1);
+    }
+    document.body.setAttribute(
+      'style',
+      `${
+        loading
+          ? 'overflow: hidden; max-height: 100vh;'
+          : 'overflow: unset; max-height: unset;'
+      }`
+    );
+    return () => {
+      clearInterval(intervalId);
+      document.body.setAttribute(
+        'style',
+        'overflow: unset; max-height: unset;'
+      );
+    };
+  }, [loading]);
+
   const screens = {
     intro: Intro,
     scene1: Scene1,
@@ -33,7 +61,7 @@ const Scenes = () => {
       sections={[
         { id: 'intro', height: 2 },
         { id: 'scene1', height: 3 },
-        { id: 'scene2', height: 2 },
+        { id: 'scene2', height: 3 },
         { id: 'scene3', height: 1 },
         { id: 'scene4', height: 2 },
         { id: 'scene5', height: 2 },
@@ -47,7 +75,7 @@ const Scenes = () => {
 
         return (
           <Layout pageId={id} hideLogo={id === 'intro'}>
-            <Screen transitionData={transitionData} />
+            <Screen transitionData={transitionData} loading={loading} />
           </Layout>
         );
       }}

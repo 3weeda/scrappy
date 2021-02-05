@@ -12,7 +12,7 @@
   &__content {
     @include flexColumn;
     flex-grow: 1;
-    transition: 0.5s;
+    transition: 0.2s;
 
     span {
       font-size: 34px;
@@ -87,11 +87,11 @@
   }
 }
 
-.stepTwo {
-  .intro__content {
-    transform: translateY(-30%);
-  }
-}
+// .stepTwo {
+//   .intro__content {
+//     transform: translateY(-30%);
+//   }
+// }
 
 @keyframes fadeUp {
   0% {
