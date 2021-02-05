@@ -4,27 +4,20 @@
   position: relative;
   @include fullSize;
   overflow: hidden;
-  transition: 1s;
 
+  &,
   > * {
-    transition: 1s;
+    transition: 0.2s;
   }
 
-  .backdrop1 {
-    position: absolute;
-    @include fullSize;
-    @include bgCover;
-  }
+  .backdrop1,
   .backdrop2 {
     position: absolute;
-    left: 20%;
     @include fullSize;
     @include bgCover;
   }
   .character {
     position: absolute;
-    left: 15%;
-    top: 4%;
     height: 100%;
 
     img {
@@ -59,7 +52,6 @@
   }
   .people {
     position: absolute;
-    right: -34%;
     top: 40px;
     height: 100%;
 
@@ -69,34 +61,8 @@
   }
 }
 
-.stepTwo {
-  .backdrop2 {
-    left: 11%;
-  }
-  .character {
-    left: 7%;
-    top: 0;
-  }
-  .people {
-    right: -5%;
-  }
-}
-
-.stepThree,
-.stepFour {
-  .backdrop2 {
-    left: 11%;
-  }
-  .character {
-    left: 7%;
-    top: 0;
-  }
-  .people {
-    right: -36%;
-  }
-}
-
-.stepFour {
+.stepFour,
+.stepFive {
   .text,
   .character {
     animation-iteration-count: infinite;
@@ -131,19 +97,6 @@
         animation-timing-function: linear;
       }
     }
-  }
-}
-
-.stepFive {
-  .backdrop2 {
-    left: 11%;
-  }
-  .character {
-    left: -50%;
-    top: 0;
-  }
-  .people {
-    right: -70%;
   }
 }
 
