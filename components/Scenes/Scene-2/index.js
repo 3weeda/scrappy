@@ -1,20 +1,28 @@
+/* eslint-disable no-nested-ternary */
 import PropTypes from 'prop-types';
 import Image from 'next/image';
 import cx from 'classnames';
 import MotionDiv from 'components/shared/MotionDiv';
-import UseStepper from 'components/shared/useStepper';
+import UseTransitionStepper from 'components/shared/useTransitionStepper';
 import Text from 'components/shared/Text';
 import styles from './index.module.scss';
 
 const Scene2 = ({ transitionData }) => {
-  const step = UseStepper(transitionData, [4, 7, 10]);
+  const {
+    currentStep,
+    stepTwo,
+    stepThree,
+    stepFour,
+    stepFive,
+    stepSix,
+  } = UseTransitionStepper(transitionData, [1, 15, 30, 45, 60, 75, 100]);
+  console.log(currentStep);
 
   return (
     <MotionDiv transitionData={transitionData}>
       <div
         className={cx(styles.section, {
-          [styles.stepTwo]: step === 2,
-          [styles.stepThree]: step === 3,
+          [styles.stepFour]: currentStep === 4,
         })}
       >
         <div className={styles.backdrop1}>
@@ -57,9 +65,28 @@ const Scene2 = ({ transitionData }) => {
         <Text
           maxW="580"
           top="34%"
-          left="12%"
-          visible={step === 1}
+          left="6%"
           className={styles.text1}
+          style={{
+            opacity:
+              currentStep === 2
+                ? `${stepTwo / 100}`
+                : currentStep === 3
+                ? '1'
+                : currentStep === 4
+                ? `${(100 - stepFour) / 100}`
+                : '0',
+            transform:
+              currentStep === 2
+                ? `translateX(${stepTwo}px)`
+                : currentStep === 3
+                ? 'translateX(100px)'
+                : currentStep === 4
+                ? `translateX(${100 + stepFour}px)`
+                : currentStep === 5
+                ? 'translateX(200px)'
+                : 'none',
+          }}
         >
           Scrappy was poor, and in school his classmates would tease and harass
           him about it. He felt bad that his kicks were torn up and generic.
@@ -68,8 +95,25 @@ const Scene2 = ({ transitionData }) => {
           maxW="460"
           top="22%"
           right="18%"
-          visible={step === 2}
           className={styles.text2}
+          style={{
+            opacity:
+              currentStep === 4
+                ? `${stepFour / 100}`
+                : currentStep === 5
+                ? '1'
+                : currentStep === 6
+                ? `${(100 - stepSix) / 100}`
+                : '0',
+            transform:
+              currentStep === 4
+                ? `translateX(-${stepFour}px)`
+                : currentStep === 5
+                ? 'translateX(-100px)'
+                : currentStep === 6 || currentStep === 7
+                ? 'translateX(-200px)'
+                : 'none',
+          }}
         >
           All he wanted to rock were the same shoes as his skateboard heroes,
           and the popular kids in his class.
