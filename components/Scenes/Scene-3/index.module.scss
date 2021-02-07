@@ -8,7 +8,7 @@
 
   .backdrop1,
   .backdrop2,
-  .backgroundContainer {
+  .backdrop3 {
     position: relative;
     width: calc(100% / 3);
     background-repeat: no-repeat;
@@ -17,10 +17,6 @@
     overflow: hidden;
     transition: 0.5s;
     z-index: 2;
-    opacity: 0;
-    animation-name: fadeIn;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
   }
 
   .backdrop1 {
@@ -48,10 +44,10 @@
       }
     }
   }
-  .backgroundContainer {
+  .backdrop3 {
     transform: translateY(40vh);
 
-    .backdrop3 {
+    .backgroundContainer {
       width: 100%;
       height: 100%;
       background-image: url('/assets/images/scene3/3.jpg');
@@ -84,12 +80,5 @@
         }
       }
     }
-  }
-}
-
-@keyframes fadeIn {
-  100% {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
