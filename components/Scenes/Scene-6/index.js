@@ -1,22 +1,22 @@
+/* eslint-disable no-nested-ternary */
 import PropTypes from 'prop-types';
 import Image from 'next/image';
-import cx from 'classnames';
 import MotionDiv from 'components/shared/MotionDiv';
-import UseStepper from 'components/shared/useStepper';
+import UseTransitionStepper from 'components/shared/useTransitionStepper';
 import Text from 'components/shared/Text';
 import styles from './index.module.scss';
 
 const Scene6 = ({ transitionData }) => {
-  const step = UseStepper(transitionData, [5, 9, 10]);
+  const { currentStep, stepTwo } = UseTransitionStepper(transitionData, [
+    10,
+    90,
+    95,
+    100,
+  ]);
 
   return (
     <MotionDiv transitionData={transitionData}>
-      <div
-        className={cx(styles.section, {
-          [styles.stepTwo]: step === 2,
-          [styles.stepThree]: step === 3,
-        })}
-      >
+      <div className={styles.section}>
         <div className={styles.backdrop}>
           <Image
             src="/assets/images/scene6/1.jpg"
@@ -28,7 +28,19 @@ const Scene6 = ({ transitionData }) => {
             quality={100}
           />
         </div>
-        <div className={styles.character}>
+        <div
+          className={styles.character}
+          style={{
+            transform:
+              currentStep < 2
+                ? `translate(0,0) scale(1)`
+                : currentStep === 2
+                ? `translate(${-0.7 * stepTwo}%, ${0.18 * stepTwo}%) scale(${
+                    1 - 0.0045 * stepTwo
+                  })`
+                : `translate(-70%, 18%) scale(0.55)`,
+          }}
+        >
           <img src="/assets/images/scene6/2.png" alt="" />
         </div>
         <Text
@@ -37,8 +49,23 @@ const Scene6 = ({ transitionData }) => {
           bottom="20%"
           left="10%"
           withBg
-          visible={step === 1}
+          visible
           className={styles.text1}
+          style={{
+            transition: '0.2s',
+            opacity:
+              currentStep === 2
+                ? `${1 - stepTwo / 100}`
+                : currentStep >= 3
+                ? '0'
+                : '1',
+            transform:
+              currentStep === 1
+                ? 'translateX(20%)'
+                : currentStep === 2
+                ? `translateX(${20 - 0.2 * stepTwo}%)`
+                : 'translateX(0)',
+          }}
         >
           Around the period when he was stenciling, the city was considering
           defunding the arts program in schools. Scrappy felt this was an
@@ -50,8 +77,22 @@ const Scene6 = ({ transitionData }) => {
           top="25%"
           right="5%"
           withBg
-          visible={step === 2}
+          visible
           className={styles.text2}
+          style={{
+            opacity:
+              currentStep === 2
+                ? `${stepTwo / 100}`
+                : currentStep >= 3
+                ? '1'
+                : '0',
+            transform:
+              currentStep < 2
+                ? 'translateX(100%)'
+                : currentStep === 2
+                ? `translateX(${100 - 1.1 * stepTwo}%)`
+                : 'translateX(-10%)',
+          }}
         >
           Art was in fact a passion of his and a key distraction from his daily
           hardships. In order to bring light to the subject, Scrappy spent his

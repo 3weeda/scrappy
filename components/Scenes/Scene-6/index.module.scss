@@ -5,6 +5,11 @@
   @include fullSize;
   overflow: hidden;
 
+  &,
+  * {
+    transition: 0.2s;
+  }
+
   .backdrop {
     position: absolute;
     @include fullSize;
@@ -16,37 +21,9 @@
     position: absolute;
     right: 3%;
     bottom: 12%;
-    transition: 2s;
 
     img {
       height: 100%;
     }
-  }
-
-  .text2 {
-    transform: translateX(70%);
-  }
-}
-
-.stepTwo,
-.stepThree {
-  .character {
-    transform: translate(-70%, 18%) scale(0.55);
-  }
-
-  .text1 {
-    transform: translateX(-70%);
-    transition-delay: 0.4s !important;
-  }
-  .text2 {
-    transform: translateX(0%);
-    transition-delay: 0.4s !important;
-  }
-}
-
-.stepThree {
-  .text2 {
-    transform: translateX(-10%);
-    transition-delay: 0s !important;
   }
 }
