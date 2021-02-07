@@ -6,7 +6,7 @@
   overflow: hidden;
 
   > * {
-    transition: 2s;
+    transition: 0.2s;
   }
 
   .backdrop {
@@ -14,12 +14,12 @@
     @include fullSize;
     @include bgCover;
     background-image: url('/assets/images/scene7/1.jpg');
-    background-position: right;
   }
 
   .characterLeft,
   .characterRight {
     position: absolute;
+    bottom: 0;
 
     img {
       height: 100%;
@@ -27,44 +27,10 @@
   }
 
   .characterLeft {
-    bottom: 0;
-    left: -23%;
     height: 80%;
   }
 
   .characterRight {
-    bottom: 0;
-    right: 0;
     height: 83%;
-  }
-}
-
-.stepTwo {
-  .backdrop {
-    background-position: 10%;
-  }
-
-  .characterLeft {
-    left: 0;
-  }
-
-  .characterRight {
-    right: -17%;
-  }
-}
-
-.stepThree {
-  .backdrop {
-    opacity: 0.2;
-  }
-
-  .characterLeft {
-    height: 200%;
-    opacity: 0;
-  }
-
-  .characterRight {
-    height: 200%;
-    opacity: 0;
   }
 }

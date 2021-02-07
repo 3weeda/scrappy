@@ -5,8 +5,9 @@
   @include fullSize;
   overflow: hidden;
 
+  &,
   > * {
-    transition: 1s;
+    transition: 0.2s;
   }
 
   .backdrop1,

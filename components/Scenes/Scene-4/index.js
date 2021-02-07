@@ -10,10 +10,8 @@ const Scene4 = ({ transitionData }) => {
   const {
     currentStep,
     stepTwo,
-    stepThree,
     stepFour,
   } = UseTransitionStepper(transitionData, [1, 20, 45, 70, 95, 100]);
-  console.log(currentStep);
 
   return (
     <MotionDiv transitionData={transitionData}>
