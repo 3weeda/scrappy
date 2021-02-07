@@ -60,10 +60,10 @@ const Scenes = () => {
       transitionSize={0.1}
       sections={[
         { id: 'intro', height: 2 },
-        { id: 'scene1', height: 3 },
-        { id: 'scene2', height: 3 },
-        { id: 'scene3', height: 1 },
-        { id: 'scene4', height: 2 },
+        { id: 'scene1', height: 4 },
+        { id: 'scene2', height: 4 },
+        { id: 'scene3', height: 2 },
+        { id: 'scene4', height: 3 },
         { id: 'scene5', height: 2 },
         { id: 'scene6', height: 2 },
         { id: 'scene7', height: 2 },

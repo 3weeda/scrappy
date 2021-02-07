@@ -11,12 +11,9 @@ const Scene2 = ({ transitionData }) => {
   const {
     currentStep,
     stepTwo,
-    stepThree,
     stepFour,
-    stepFive,
     stepSix,
-  } = UseTransitionStepper(transitionData, [1, 15, 30, 45, 60, 75, 100]);
-  console.log(currentStep);
+  } = UseTransitionStepper(transitionData, [1, 10, 20, 35, 65, 95, 100]);
 
   return (
     <MotionDiv transitionData={transitionData}>
@@ -35,11 +32,72 @@ const Scene2 = ({ transitionData }) => {
             loading="eager"
             quality={100}
           />
+          <img
+            src="/assets/images/scene2/4.png"
+            className={styles.head}
+            alt=""
+          />
         </div>
-        <div className={styles.peopleRight}>
+        <div
+          className={styles.peopleRight}
+          style={{
+            opacity:
+              currentStep === 4
+                ? `${stepFour / 100}`
+                : currentStep === 5
+                ? '1'
+                : currentStep === 6
+                ? `${(100 - stepSix) / 100}`
+                : '0',
+            height:
+              currentStep === 4
+                ? `${200 - stepFour}%`
+                : currentStep === 5
+                ? '100%'
+                : currentStep === 6
+                ? `${stepSix + 100}%`
+                : '0',
+            right:
+              currentStep === 4
+                ? `${-80 + 0.77 * stepFour}%`
+                : currentStep === 5
+                ? '-3%'
+                : currentStep === 6
+                ? `${-3 - 0.77 * stepSix}%`
+                : '-80%',
+          }}
+        >
           <img src="/assets/images/scene2/3.png" alt="" />
         </div>
-        <div className={styles.peopleLeft}>
+        <div
+          className={styles.peopleLeft}
+          style={{
+            opacity:
+              currentStep === 4
+                ? `${stepFour / 100}`
+                : currentStep === 5
+                ? '1'
+                : currentStep === 6
+                ? `${(100 - stepSix) / 100}`
+                : '0',
+            height:
+              currentStep === 4
+                ? `${200 - stepFour}%`
+                : currentStep === 5
+                ? '100%'
+                : currentStep === 6
+                ? `${stepSix + 100}%`
+                : '0',
+            left:
+              currentStep === 4
+                ? `${-80 + 0.77 * stepFour}%`
+                : currentStep === 5
+                ? '-3%'
+                : currentStep === 6
+                ? `${-3 - 0.77 * stepSix}%`
+                : '-80%',
+          }}
+        >
           <img src="/assets/images/scene2/2.png" alt="" />
         </div>
         <div className={styles.backdrop2}>
@@ -52,7 +110,17 @@ const Scene2 = ({ transitionData }) => {
             loading="eager"
           />
         </div>
-        <div className={styles.backdrop3}>
+        <div
+          className={styles.backdrop3}
+          style={{
+            opacity:
+              currentStep === 4
+                ? `${stepFour / 100}`
+                : currentStep > 4
+                ? '1'
+                : '0',
+          }}
+        >
           <Image
             src="/assets/images/scene2/over2.png"
             alt=""
@@ -94,7 +162,7 @@ const Scene2 = ({ transitionData }) => {
         <Text
           maxW="460"
           top="22%"
-          right="18%"
+          right="12%"
           className={styles.text2}
           style={{
             opacity:
@@ -110,8 +178,10 @@ const Scene2 = ({ transitionData }) => {
                 ? `translateX(-${stepFour}px)`
                 : currentStep === 5
                 ? 'translateX(-100px)'
-                : currentStep === 6 || currentStep === 7
-                ? 'translateX(-200px)'
+                : currentStep === 6
+                ? `translateX(${-100 - stepSix}px)`
+                : currentStep === 7
+                ? `translateX(-200px)`
                 : 'none',
           }}
         >

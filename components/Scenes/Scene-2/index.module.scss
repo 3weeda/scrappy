@@ -17,41 +17,38 @@
     @include fullSize;
     @include bgCover;
   }
-  .backdrop3 {
-    opacity: 0;
+  .backdrop1 {
+    .head {
+      position: absolute;
+      height: 27%;
+      top: 38%;
+      left: 50.5%;
+      transform: translate(-50%, -50%);
+      transform-origin: left bottom;
+      animation-name: toggleHead;
+      animation-iteration-count: infinite;
+      animation-duration: 3s;
+    }
   }
   .peopleLeft,
   .peopleRight {
     position: absolute;
     bottom: -8%;
-    height: 200%;
-    opacity: 0;
 
     img {
       height: 100%;
     }
   }
-  .peopleLeft {
-    left: -80%;
-  }
-  .peopleRight {
-    right: -80%;
-  }
 }
 
-// .stepTwo {
-//   .backdrop3 {
-//     opacity: 1;
-//   }
-//   .peopleLeft,
-//   .peopleRight {
-//     height: 100%;
-//     opacity: 1;
-//   }
-//   .peopleLeft {
-//     left: -3%;
-//   }
-//   .peopleRight {
-//     right: -3%;
-//   }
-// }
+@keyframes toggleHead {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    transform: translate(-53%, -51%) rotate(4deg);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
