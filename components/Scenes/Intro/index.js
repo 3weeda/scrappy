@@ -1,72 +1,26 @@
-import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
 import MotionDiv from 'components/shared/MotionDiv';
+import UseTransitionStepper from 'components/shared/useTransitionStepper';
 import Preloader from './Preloader';
 import styles from './index.module.scss';
 
-const Intro = ({ transitionData }) => {
-  const [loading, setLoading] = useState(100);
-  const [step, setStep] = useState(1);
-  const percent = (transitionData.percent * 10).toFixed();
-
-  // TODO: Change to actual loading time for all assets
-  useEffect(() => {
-    let intervalId;
-    if (loading) {
-      intervalId = setInterval(() => {
-        setLoading(loading - 1);
-      }, 50);
-    }
-    document.body.setAttribute(
-      'style',
-      `${
-        loading
-          ? 'overflow: hidden; max-height: 100vh;'
-          : 'overflow: unset; max-height: unset;'
-      }`
-    );
-    return () => {
-      clearInterval(intervalId);
-      document.body.setAttribute(
-        'style',
-        'overflow: unset; max-height: unset;'
-      );
-    };
-  }, [loading]);
-
-  useEffect(() => {
-    if (percent < 5) {
-      setStep(1);
-    } else if (percent > 5 && !loading) {
-      setStep(2);
-    }
-  }, [percent]);
-
-  // TODO: consider using this to control scrolling
-  // const handleScrolling = () => {
-  //   window.scrollBy(0, window.innerHeight + 100);
-  // };
-
-  // useEffect(() => {
-  //   if (step === 3) {
-  //     window.addEventListener('scroll', handleScrolling);
-  //   }
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScrolling);
-  //   };
-  // }, [step]);
+const Intro = ({ transitionData, loading }) => {
+  const { currentStep, stepTwo } = UseTransitionStepper(transitionData, [
+    10,
+    100,
+  ]);
 
   return (
     <MotionDiv transitionData={transitionData} noEntering>
-      <div
-        className={cx(styles.intro, {
-          [styles.stepTwo]: step === 2,
-        })}
-      >
-        <Preloader loading={loading} animateUp={step !== 1} />
-        <div className={styles.intro__content}>
+      <div className={styles.intro}>
+        <Preloader loading={loading} transition={stepTwo} />
+        <div
+          className={styles.intro__content}
+          style={{
+            transform: currentStep === 2 && `translateY(${-0.3 * stepTwo}%)`,
+          }}
+        >
           {loading > 0 ? (
             <span>{`Loading.. ${100 - loading}%`}</span>
           ) : (
@@ -102,6 +56,7 @@ const Intro = ({ transitionData }) => {
 
 Intro.propTypes = {
   transitionData: PropTypes.object.isRequired,
+  loading: PropTypes.number.isRequired,
 };
 
 export default Intro;

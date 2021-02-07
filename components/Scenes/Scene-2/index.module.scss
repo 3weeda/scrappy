@@ -5,18 +5,9 @@
   @include fullSize;
   overflow: hidden;
 
+  &,
   > * {
-    transition: 2s;
-  }
-
-  .text1,
-  .text2 {
-    transition-delay: 0.5s !important;
-  }
-
-  .text2 {
-    opacity: 0;
-    transform: translateX(100px);
+    transition: 0.2s;
   }
 
   .backdrop1,
@@ -26,49 +17,38 @@
     @include fullSize;
     @include bgCover;
   }
-  .backdrop3 {
-    opacity: 0;
+  .backdrop1 {
+    .head {
+      position: absolute;
+      height: 27%;
+      top: 38%;
+      left: 50.5%;
+      transform: translate(-50%, -50%);
+      transform-origin: left bottom;
+      animation-name: toggleHead;
+      animation-iteration-count: infinite;
+      animation-duration: 3s;
+    }
   }
   .peopleLeft,
   .peopleRight {
     position: absolute;
     bottom: -8%;
-    height: 200%;
-    opacity: 0;
 
     img {
       height: 100%;
     }
   }
-  .peopleLeft {
-    left: -80%;
-  }
-  .peopleRight {
-    right: -80%;
-  }
 }
 
-.stepTwo {
-  .text1 {
-    opacity: 0;
-    transform: translateX(100px);
+@keyframes toggleHead {
+  0% {
+    transform: translate(-50%, -50%);
   }
-  .text2 {
-    opacity: 1;
-    transform: translateX(0);
+  50% {
+    transform: translate(-53%, -51%) rotate(4deg);
   }
-  .backdrop3 {
-    opacity: 1;
-  }
-  .peopleLeft,
-  .peopleRight {
-    height: 100%;
-    opacity: 1;
-  }
-  .peopleLeft {
-    left: -3%;
-  }
-  .peopleRight {
-    right: -3%;
+  100% {
+    transform: translate(-50%, -50%);
   }
 }

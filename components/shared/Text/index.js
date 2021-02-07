@@ -14,6 +14,7 @@ const Text = ({
   visible,
   withBg,
   className,
+  style,
 }) => (
   <div
     className={cx(styles.text, className, { [styles.withBg]: withBg })}
@@ -26,6 +27,7 @@ const Text = ({
       bottom,
       left,
       right,
+      ...style,
     }}
   >
     <span>{children}</span>
@@ -44,6 +46,7 @@ Text.propTypes = {
   withBg: PropTypes.bool,
   visible: PropTypes.bool,
   className: PropTypes.string,
+  style: PropTypes.object,
 };
 
 Text.defaultProps = {
@@ -57,6 +60,7 @@ Text.defaultProps = {
   withBg: false,
   visible: false,
   className: '',
+  style: {},
 };
 
 export default Text;
