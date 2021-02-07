@@ -5,44 +5,21 @@
   @include fullSize;
   overflow: hidden;
 
+  &,
   > * {
-    transition: all 2s;
+    transition: all 0.2s, background-image 1s;
   }
 
   .backdrop {
     position: absolute;
     @include fullSize;
-    @include bgCover;
+    background-repeat: no-repeat;
     background-image: url('/assets/images/scene8/1.jpg');
-    background-position: bottom right;
-  }
-}
-
-.stepTwo,
-.stepThree,
-.stepFour {
-  .backdrop {
-    background-image: url('/assets/images/scene8/1-2.jpg');
   }
 }
 
 .stepTwo {
   .backdrop {
-    background-size: 140%;
-    background-position: bottom right;
-  }
-}
-
-.stepThree {
-  .backdrop {
-    background-size: 140%;
-    background-position: bottom left;
-  }
-}
-
-.stepFour {
-  .backdrop {
-    background-size: cover;
-    background-position: center;
+    background-image: url('/assets/images/scene8/1-2.jpg');
   }
 }
