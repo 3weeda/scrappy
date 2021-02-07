@@ -5,25 +5,19 @@
   @include fullSize;
   overflow: hidden;
 
-  > * {
-    transition: 1s;
+  &,
+  * {
+    transition: 0.2s;
   }
 
   .backdrop1,
   .backdrop2,
-  .backdrop3 {
+  .backdrop3,
+  .backdrop4 {
     position: absolute;
     @include fullSize;
     @include bgCover;
-  }
-
-  .backdrop1 {
     background-position: bottom;
-  }
-
-  .backdrop2 {
-    background-position: bottom;
-    opacity: 0;
   }
 
   .backdrop3 {
@@ -32,7 +26,6 @@
 
   .characterRight {
     position: absolute;
-    right: -50%;
     bottom: 0;
     height: 100%;
 
@@ -52,29 +45,20 @@
       right: -96%;
       transform-origin: bottom left;
       transition: 1s;
-      transition-delay: 1s;
     }
-  }
-
-  .text {
-    right: 19% !important;
   }
 
   .car {
     position: absolute;
-    left: -300vh;
     bottom: -25%;
-    transition: 3s;
     z-index: 100;
-    transition-delay: 1s;
   }
 }
 
-.stepTwo,
-.stepThree {
+.stepThree,
+.stepFour,
+.stepFive {
   .characterLeft {
-    left: 24%;
-
     .hand {
       transform: rotate(10deg) translateX(0px);
       animation-name: toggleHand;
@@ -83,32 +67,20 @@
       animation-delay: 1s;
     }
   }
-
-  .backdrop2 {
-    opacity: 1;
-    transition: 5s;
-    transition-delay: 1s !important;
-  }
-  .text {
-    right: 10% !important;
-  }
-  .car {
-    left: 250vh;
-  }
 }
 
-.stepThree {
+.stepFour,
+.stepFive {
   .characterLeft {
     > img {
       animation-name: toggleCharLeft;
       animation-iteration-count: infinite;
       animation-duration: 1s;
-      animation-delay: 1s;
+      animation-delay: 0s;
       transform-origin: bottom;
     }
   }
   .characterRight {
-    right: 14%;
     animation-name: toggleCharRight;
     animation-iteration-count: infinite;
     animation-duration: 1s;
@@ -142,12 +114,12 @@
 
 @keyframes toggleHand {
   0% {
-    transform: rotate(0deg) translateX(1px);
+    transform: rotate(0deg) translateX(3px);
   }
   50% {
     transform: rotate(7deg) translateX(0px);
   }
   100% {
-    transform: rotate(0deg) translateX(1px);
+    transform: rotate(0deg) translateX(3px);
   }
 }
