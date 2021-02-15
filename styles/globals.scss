@@ -22,39 +22,8 @@ body {
   display: none;
 }
 
-// #__next {
-//   > div {
-//     position: relative;
-//     z-index: 20;
-//   }
-//   // #intro {
-//   //   z-index: 10;
-//   // }
-//   // #scene1 {
-//   //   z-index: 9;
-//   // }
-//   // #scene2 {
-//   //   z-index: 8;
-//   // }
-//   // #scene3 {
-//   //   z-index: 7;
-//   // }
-//   // #scene4 {
-//   //   z-index: 6;
-//   // }
-//   // #scene5 {
-//   //   z-index: 5;
-//   // }
-//   // #scene6 {
-//   //   z-index: 4;
-//   // }
-//   // #scene7 {
-//   //   z-index: 3;
-//   // }
-//   // #scene8 {
-//   //   z-index: 2;
-//   // }
-//   // #scene9 {
-//   //   z-index: 1;
-//   // }
-// }
+#__next {
+  > div {
+    position: relative;
+  }
+}
