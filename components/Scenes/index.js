@@ -15,7 +15,6 @@ import Scene9 from './Scene-9';
 const Scenes = () => {
   const [loading, setLoading] = useState(100);
 
-  // TODO: Change to actual loading time for all assets
   useEffect(() => {
     let intervalId;
     if (loading) {
@@ -58,6 +57,7 @@ const Scenes = () => {
       padStart={false}
       padEnd={false}
       transitionSize={0.1}
+      dynamicLoading={false}
       sections={[
         { id: 'intro', height: 2 },
         { id: 'scene1', height: 4 },
@@ -72,6 +72,18 @@ const Scenes = () => {
       ]}
       render={(id, transitionData) => {
         const Screen = screens[id] || null;
+        const current = document.getElementById(id);
+        const index = id !== 'intro' ? id.slice(-1) : 0;
+
+        if (current) {
+          current.style.zIndex = 10 - index;
+
+          if (!transitionData.isVisible) {
+            current.style.opacity = '0';
+          } else {
+            current.style.opacity = '1';
+          }
+        }
 
         return (
           <Layout pageId={id} hideLogo={id === 'intro'}>
