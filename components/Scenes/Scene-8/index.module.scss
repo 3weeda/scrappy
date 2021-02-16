@@ -10,16 +10,89 @@
     transition: all 0.2s, background-image 1s;
   }
 
-  .backdrop {
+  .backdrop1,
+  .backdrop2,
+  .backdrop3 {
     position: absolute;
     @include fullSize;
     background-repeat: no-repeat;
-    background-image: url('/assets/images/scene8/1.jpg');
+  }
+
+  .backdrop1 {
+    background-image: url('/assets/images/scene8/2.png');
+  }
+  .backdrop2 {
+    background-image: url('/assets/images/scene8/1.png');
+  }
+  .backdrop3 {
+    background-image: url('/assets/images/scene8/1-2.png');
+  }
+  .clouds {
+    position: absolute;
+    animation-iteration-count: infinite;
+    animation-name: hoverTwo;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+
+    img {
+      width: 100%;
+    }
+  }
+  .crowd {
+    position: absolute;
+    display: flex;
+    width: 680px;
+
+    > div {
+      &:first-of-type {
+        width: 67%;
+        z-index: 2;
+        animation-iteration-count: infinite;
+        animation-name: hoverOne;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+      }
+      &:last-of-type {
+        width: 33%;
+        position: relative;
+        right: 40px;
+        top: 10px;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .character {
+    position: absolute;
+
+    img {
+      height: 100%;
+    }
   }
 }
 
-.stepTwo {
-  .backdrop {
-    background-image: url('/assets/images/scene8/1-2.jpg');
+@keyframes hoverOne {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes hoverTwo {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(40px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
