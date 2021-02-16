@@ -20,7 +20,7 @@ const Scenes = () => {
     if (loading) {
       intervalId = setInterval(() => {
         setLoading(loading - 1);
-      }, 1);
+      }, 50);
     }
     document.body.setAttribute(
       'style',
