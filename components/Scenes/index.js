@@ -85,7 +85,7 @@ const Scenes = () => {
           { id: 'scene5', height: 4 },
           { id: 'scene6', height: 3 },
           { id: 'scene7', height: 3 },
-          { id: 'scene8', height: 4 },
+          { id: 'scene8', height: 5 },
           { id: 'scene9', height: 1 },
         ]}
         render={(id, transitionData) => {
@@ -98,10 +98,10 @@ const Scenes = () => {
 
             if (!transitionData.isVisible) {
               current.style.opacity = '0';
-              current.firstChild.style.position = 'absolute';
+              current.firstChild.style.display = 'none';
             } else {
               current.style.opacity = '1';
-              current.firstChild.style.position = 'fixed';
+              current.firstChild.style.display = 'block';
             }
           }
 
