@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types';
 import Image from 'next/image';
 import MotionDiv from 'components/shared/MotionDiv';
-import UseTransitionStepper from 'components/shared/useTransitionStepper';
+import UseTransitionStepper from 'hooks/useTransitionStepper';
 import Text from 'components/shared/Text';
 import styles from './index.module.scss';
 
