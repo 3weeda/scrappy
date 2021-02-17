@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getScrollTransition } from 'react-scroll-transitions';
 
-const UseTransitionStepper = (transitionData, steps) => {
+const useTransitionStepper = (transitionData, steps) => {
   const [currentStep, setCurrentStep] = useState(1);
   const [stepTwo, setStepTwo] = useState(0);
   const [stepThree, setStepThree] = useState(0);
@@ -88,4 +88,4 @@ const UseTransitionStepper = (transitionData, steps) => {
   };
 };
 
-export default UseTransitionStepper;
+export default useTransitionStepper;
