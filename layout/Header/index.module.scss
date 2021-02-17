@@ -71,6 +71,7 @@
         }
         .phrase {
           transform: translateX(-28px);
+          user-select: none;
         }
 
         &:hover {
