@@ -1,5 +1,5 @@
-import ScrollTransitions from 'react-scroll-transitions';
 import { useEffect, useState } from 'react';
+import ScrollTransitions from 'react-scroll-transitions';
 import Layout from 'layout/Layout';
 import Intro from './Intro';
 import Scene1 from './Scene-1';
@@ -80,8 +80,10 @@ const Scenes = () => {
 
           if (!transitionData.isVisible) {
             current.style.opacity = '0';
+            current.firstChild.style.position = 'absolute';
           } else {
             current.style.opacity = '1';
+            current.firstChild.style.position = 'fixed';
           }
         }
 
