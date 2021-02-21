@@ -20,16 +20,9 @@ const Scenes = () => {
 
   useEffect(() => {
     if (typeof window !== 'undefined') window.soundManager.useConsole = false;
-  }, []);
-
-  // Trigger audio play by any user interaction as per the new Autoplay Policy
-  useEffect(() => {
-    if (!playing) {
-      document.addEventListener('scroll', setPlaying(true));
-    }
-    return () => {
-      document.removeEventListener('scroll', setPlaying(true));
-    };
+    setTimeout(() => {
+      setPlaying(true);
+    }, 2000);
   }, []);
 
   useEffect(() => {
