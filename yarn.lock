@@ -4515,6 +4515,11 @@ react-scroll-transitions@^1.2.1:
   resolved "https://registry.yarnpkg.com/react-scroll-transitions/-/react-scroll-transitions-1.2.1.tgz#a8ed77e850d6b9f43e02eea4eddd0d7c9e8052e7"
   integrity sha512-ZuFSjwfv1YsUGz4sPwgkbU4foWtsHwjJDnFq5WBuLn/DDVqCRI9zCw0giSK667yKV5RTx4F5I+QQsKGrc57ZGA==
 
+react-slider@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/react-slider/-/react-slider-1.1.4.tgz#08b55f9be3e04cc10ae00cc3aedb6891dffe9bf3"
+  integrity sha512-lL/MvzFcDue0ztdJItwLqas2lOy8Gg46eCDGJc4cJGldThmBHcHfGQePgBgyY1SEN95OwsWAakd3SuI8RyixDQ==
+
 react-sound@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/react-sound/-/react-sound-1.2.0.tgz#1bb7e1ec8494ecc57b03dbdecd1496b10f6541f2"
