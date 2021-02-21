@@ -41,7 +41,7 @@ const Footer = ({ pageId }) => {
             renderThumb={(props) => <div {...props} />}
             onChange={(val) => onChange(val)}
             value={(current - 1) * 12.45}
-            marks
+            // marks
           />
         </div>
       </div>
