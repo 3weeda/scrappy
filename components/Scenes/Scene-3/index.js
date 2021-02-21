@@ -25,9 +25,9 @@ const Scene3 = ({ transitionData }) => {
                 : '1',
             transform:
               currentStep === 1
-                ? 'translateY(100vh)'
+                ? 'translateY(100%)'
                 : currentStep === 2
-                ? `translateY(${100 - stepTwo}vh)`
+                ? `translateY(${100 - stepTwo}%)`
                 : 'translateY(0)',
           }}
         />
@@ -42,9 +42,9 @@ const Scene3 = ({ transitionData }) => {
                 : '1',
             transform:
               currentStep === 1
-                ? 'translateY(-100vh)'
+                ? 'translateY(-100%)'
                 : currentStep === 2
-                ? `translateY(${stepTwo - 100}vh)`
+                ? `translateY(${stepTwo - 100}%)`
                 : 'translateY(0)',
           }}
         >
@@ -61,9 +61,9 @@ const Scene3 = ({ transitionData }) => {
                 : '1',
             transform:
               currentStep === 1
-                ? 'translateY(40vh)'
+                ? 'translateY(40%)'
                 : currentStep === 2
-                ? `translateY(${40 - 0.4 * stepTwo}vh)`
+                ? `translateY(${40 - 0.4 * stepTwo}%)`
                 : 'translateY(0)',
           }}
         >

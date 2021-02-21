@@ -1,7 +1,7 @@
 .footer {
   position: absolute;
   z-index: 100;
-  bottom: 66px;
+  bottom: 46px;
   left: 0;
   width: 100%;
   display: flex;
@@ -14,12 +14,43 @@
 
   .scenes {
     display: flex;
+    flex-direction: column;
+    width: 100%;
 
-    > p {
-      margin-right: 45px;
+    .counter {
+      display: flex;
+      margin-bottom: 20px;
 
-      span {
-        color: var(--lightGrey);
+      > p {
+        margin-right: 45px;
+
+        span {
+          color: var(--lightGrey);
+        }
+      }
+
+      > span {
+        margin-left: auto;
+      }
+    }
+
+    .slider {
+      display: flex;
+      margin-left: 150px;
+      height: 6px;
+
+      .track {
+        height: 6px;
+        background-color: #dddddd;
+        opacity: 0.23;
+      }
+
+      .thumb {
+        height: 6px;
+        width: calc((100% - 150px) / 8);
+        background-color: #ffffff;
+        outline: none;
+        user-select: none;
       }
     }
   }
