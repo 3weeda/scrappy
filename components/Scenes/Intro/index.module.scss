@@ -2,7 +2,7 @@
 
 .intro {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   @include flexColumn;
   background: center no-repeat url('/assets/images/intro/intro.jpg'),
