@@ -2,6 +2,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  cursor: none;
 }
 html,
 body,
@@ -137,5 +138,4 @@ button:focus,
 button:active {
   outline: none;
   user-select: none;
-  cursor: pointer;
 }

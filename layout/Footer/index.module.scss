@@ -40,15 +40,25 @@
       height: 6px;
 
       .track {
-        height: 6px;
-        background-color: #dddddd;
+        height: 12px;
+        background: rgb(221, 221, 221);
+        background: linear-gradient(
+          0deg,
+          rgba(221, 221, 221, 1) 50%,
+          rgba(0, 0, 0, 0) 50%
+        );
         opacity: 0.23;
       }
 
       .thumb {
-        height: 6px;
         width: calc((100% - 150px) / 8);
-        background-color: #ffffff;
+        height: 12px;
+        background: rgb(221, 221, 221);
+        background: linear-gradient(
+          0deg,
+          rgba(221, 221, 221, 1) 50%,
+          rgba(0, 0, 0, 0) 50%
+        );
         outline: none;
         user-select: none;
       }
