@@ -16,7 +16,6 @@ const Footer = ({ pageId }) => {
       id = 9;
     }
     const el = document.getElementById(`scene${id}`);
-    console.log(id);
     if (el) {
       smoothScroll(el);
     }

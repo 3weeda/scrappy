@@ -2,6 +2,7 @@ import Image from 'next/image';
 import PropTypes from 'prop-types';
 import MotionDiv from 'components/shared/MotionDiv';
 import UseTransitionStepper from 'hooks/useTransitionStepper';
+import smoothScroll from 'utils/smoothScroll';
 import Preloader from './Preloader';
 import styles from './index.module.scss';
 
@@ -10,6 +11,13 @@ const Intro = ({ transitionData, loading }) => {
     10,
     100,
   ]);
+
+  const scrollToFirstScene = () => {
+    const el = document.getElementById(`scene1`);
+    if (el) {
+      smoothScroll(el);
+    }
+  };
 
   return (
     <MotionDiv transitionData={transitionData} noEntering>
@@ -32,7 +40,11 @@ const Intro = ({ transitionData, loading }) => {
                 <br />
                 when you have so little?
               </h2>
-              <div className={styles.scrollInfo}>
+              <button
+                type="button"
+                className={styles.scrollInfo}
+                onClick={scrollToFirstScene}
+              >
                 <div className={styles.text}>
                   <p>Scroll</p>
                 </div>
@@ -45,7 +57,7 @@ const Intro = ({ transitionData, loading }) => {
                     quality={100}
                   />
                 </div>
-              </div>
+              </button>
             </div>
           )}
         </div>
