@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 
 const useAudio = (url) => {
-  const [audio] = useState(new Audio(url));
+  const aud = typeof Audio !== 'undefined' && new Audio(url);
+  const [audio] = useState(aud);
   const [playing, setPlaying] = useState(false);
 
   const toggle = () => setPlaying(!playing);
@@ -21,7 +22,7 @@ const useAudio = (url) => {
     };
   }, []);
 
-  return [playing, toggle];
+  return [{ playing, toggle }];
 };
 
 export default useAudio;
