@@ -4,10 +4,10 @@ import cx from 'classnames';
 import styles from './index.module.scss';
 
 const links = [
-  { icon: 'facebook', url: 'www.facebook.com' },
-  { icon: 'youtube', url: 'www.youtube.com' },
-  { icon: 'twitter', url: 'www.twitter.com' },
-  { icon: 'discord', url: 'www.discord.com' },
+  { icon: 'facebook', url: 'https://www.facebook.com' },
+  { icon: 'youtube', url: 'https://www.youtube.com' },
+  { icon: 'twitter', url: 'https://www.twitter.com' },
+  { icon: 'discord', url: 'https://www.discord.com' },
 ];
 
 const Header = ({ hideLogo, playing, toggle }) => (
