@@ -1,16 +1,17 @@
 .footer {
   position: absolute;
   z-index: 100;
-  bottom: 46px;
+  bottom: 0;
   left: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 0 60px;
+  padding: 40px 60px 40px;
   font-family: HelveticaNeue;
   color: var(--white);
   font-size: 15px;
   font-weight: 500;
+  background-color: rgb(0, 0, 0, 0.41);
 
   .scenes {
     display: flex;
@@ -19,7 +20,7 @@
 
     .counter {
       display: flex;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
 
       > p {
         margin-right: 45px;
