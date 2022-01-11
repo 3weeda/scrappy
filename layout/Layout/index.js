@@ -7,19 +7,20 @@ const Layout = ({ children, pageId, hideLogo, playing, toggle }) => (
   <main className={styles.main}>
     <Header hideLogo={hideLogo} playing={playing} toggle={toggle} />
     {children}
-    <Footer pageId={pageId} />
+    {pageId ? <Footer pageId={pageId} /> : null}
   </main>
 );
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-  pageId: PropTypes.string.isRequired,
+  pageId: PropTypes.string,
   hideLogo: PropTypes.bool,
   playing: PropTypes.bool,
   toggle: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 Layout.defaultProps = {
+  pageId: null,
   hideLogo: false,
   playing: true,
 };

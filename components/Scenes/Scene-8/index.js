@@ -1,7 +1,7 @@
 /* eslint-disable no-nested-ternary */
 import PropTypes from 'prop-types';
 import MotionDiv from 'components/shared/MotionDiv';
-import UseTransitionStepper from 'hooks/useTransitionStepper';
+import { useTransitionStepper } from 'hooks';
 import Text from 'components/shared/Text';
 import styles from './index.module.scss';
 
@@ -11,7 +11,7 @@ const Scene8 = ({ transitionData }) => {
     stepTwo,
     stepThree,
     stepFour,
-  } = UseTransitionStepper(transitionData, [10, 30, 60, 80, 90, 100]);
+  } = useTransitionStepper(transitionData, [10, 30, 60, 80, 90, 100]);
 
   const bgStyle = {
     backgroundSize:

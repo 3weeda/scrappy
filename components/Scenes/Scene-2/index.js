@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Image from 'next/image';
 import cx from 'classnames';
 import MotionDiv from 'components/shared/MotionDiv';
-import UseTransitionStepper from 'hooks/useTransitionStepper';
+import { useTransitionStepper } from 'hooks';
 import Text from 'components/shared/Text';
 import styles from './index.module.scss';
 
@@ -13,7 +13,7 @@ const Scene2 = ({ transitionData }) => {
     stepTwo,
     stepFour,
     stepSix,
-  } = UseTransitionStepper(transitionData, [1, 10, 20, 35, 65, 95, 100]);
+  } = useTransitionStepper(transitionData, [1, 10, 20, 35, 65, 95, 100]);
 
   return (
     <MotionDiv transitionData={transitionData}>

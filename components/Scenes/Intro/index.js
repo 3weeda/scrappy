@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import PropTypes from 'prop-types';
 import MotionDiv from 'components/shared/MotionDiv';
-import UseTransitionStepper from 'hooks/useTransitionStepper';
+import { useTransitionStepper } from 'hooks';
 import smoothScroll from 'utils/smoothScroll';
 import Preloader from './Preloader';
 import styles from './index.module.scss';
 
 const Intro = ({ transitionData, loading }) => {
-  const { currentStep, stepTwo } = UseTransitionStepper(transitionData, [
+  const { currentStep, stepTwo } = useTransitionStepper(transitionData, [
     10,
     100,
   ]);

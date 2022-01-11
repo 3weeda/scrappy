@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 import ScrollTransitions from 'react-scroll-transitions';
 import Sound from 'react-sound';
 import Layout from 'layout/Layout';
-import useAudio from 'hooks/useAudio';
+import { useAudio, useWideViewportWidth } from 'hooks';
 import Intro from './Intro';
+import Fallback from './Fallback';
 import Scene1 from './Scene-1';
 import Scene2 from './Scene-2';
 import Scene3 from './Scene-3';
@@ -17,10 +18,14 @@ import Scene9 from './Scene-9';
 const Scenes = () => {
   const [loading, setLoading] = useState(100);
   const [allPlaying, setAllPlaying] = useState(false);
+
   const toggleLoop = () => setAllPlaying(!allPlaying);
+
   const [{ playing: clickPlaying, toggle: toggleClick }] = useAudio(
     '/assets/audio/click.ogg'
   );
+
+  const isWide = useWideViewportWidth();
 
   useEffect(() => {
     let intervalId;
@@ -66,7 +71,7 @@ const Scenes = () => {
     scene9: Scene9,
   };
 
-  return (
+  return isWide ? (
     <>
       <ScrollTransitions
         padStart={false}
@@ -122,6 +127,10 @@ const Scenes = () => {
         loop
       />
     </>
+  ) : (
+    <Layout toggle={toggleLoop}>
+      <Fallback />
+    </Layout>
   );
 };
 

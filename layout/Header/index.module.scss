@@ -97,3 +97,16 @@
     }
   }
 }
+
+@media (max-width: 970px) {
+  .header {
+    .headerCont {
+      justify-content: center;
+
+      .links,
+      .options {
+        display: none;
+      }
+    }
+  }
+}

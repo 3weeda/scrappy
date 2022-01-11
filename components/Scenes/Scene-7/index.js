@@ -1,7 +1,7 @@
 /* eslint-disable no-nested-ternary */
 import PropTypes from 'prop-types';
 import MotionDiv from 'components/shared/MotionDiv';
-import UseTransitionStepper from 'hooks/useTransitionStepper';
+import { useTransitionStepper } from 'hooks';
 import styles from './index.module.scss';
 
 const Scene7 = ({ transitionData }) => {
@@ -9,7 +9,7 @@ const Scene7 = ({ transitionData }) => {
     currentStep,
     stepTwo,
     stepThree,
-  } = UseTransitionStepper(transitionData, [20, 70, 99, 100]);
+  } = useTransitionStepper(transitionData, [20, 70, 99, 100]);
 
   return (
     <MotionDiv transitionData={transitionData}>
